@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity, CheckBox} from "react-native";
+import {FlatList} from "react-native-gesture-handler";
 
 const FriendsScreen = ({navigation}) => {
     const buttonBackHandler = () => {
         navigation.navigate('MainScreen');
     }
-
 
     const [error, setError] = useState(null);
     const [message, setMessage] = useState(null);
@@ -15,7 +15,7 @@ const FriendsScreen = ({navigation}) => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/public")
+        fetch("http://localhost:5000/addFriend")
             .then(res => res.json())
             .then(
                 (result) => {
@@ -28,12 +28,13 @@ const FriendsScreen = ({navigation}) => {
                     } else {
                         setIsLoaded(true);
                         setItems(result);
+                        console.log(result);
                     }
                 },
             )
     }, [])
 
-    if (error) {
+   if (error) {
         return <View><Text>Ошибка: {error}</Text></View>;
     } else if (!isLoaded) {
         return <View><Text>Загрузка...</Text></View>;
@@ -46,18 +47,21 @@ const FriendsScreen = ({navigation}) => {
                 <TouchableOpacity style={stylesFriend.buttonFriends} onPress={buttonBackHandler}>
                     <Text style={stylesFriend.buttonFriendText}>Back to main page</Text>
                 </TouchableOpacity>
-                <ul>
+                {isLoaded ? <ul>
                     {items.map(item => (
+                        <li>
                         <CheckBox
                             value={isSelected}
                             onValueChange={setSelection}
                             style={stylesFriend.checkbox}
-                        />,
-                        <li key={item.id}>
-                            {item.name} {item.email}
+                        />
+                            <Text key={item.id}>
+                                {`${item.name}, ${item.email}`}
+                            </Text>
                         </li>
                     ))}
-                </ul>
+                </ul> : <span>Loading...</span>}
+
             </View>
         );
     }
