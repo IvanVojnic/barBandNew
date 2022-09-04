@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize';
 
 import sequelize from '../utils/database.js';
+import Friends from "./friends.js";
 
 const User = sequelize.define('users', {
    id: {
@@ -21,5 +22,5 @@ const User = sequelize.define('users', {
       allowNull: false,
    },
 });
-
+User.hasMany(Friends);
 export default User;

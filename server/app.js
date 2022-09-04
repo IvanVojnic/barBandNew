@@ -28,6 +28,8 @@ app.use((_, res, next) => {
 
 app.use(router);
 
-sequelize.sync();
+sequelize.sync({force:false}).then(()=>{
+    console.log("Tables have been created");
+}).catch(err=>console.log(err));
 
 app.listen(5000);

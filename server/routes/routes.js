@@ -4,6 +4,8 @@ import { signup, login, isAuth } from '../controllers/auth.js';
 
 import {sendUsers} from '../controllers/UsersCommunicate.js';
 
+import {testReq} from "../controllers/UsersCommunicate.js";
+
 const router = express.Router();
 
 router.post('/login', login);
@@ -16,7 +18,9 @@ router.get('/public', (req, res, next) => {
     res.status(200).json({ message: "here is your public resource" });
 });
 
-router.get('/addFriend', sendUsers);
+router.get('/test', testReq);
+
+router.get('/getFriends', sendUsers);
 
 // will match any other path
 router.use('/', (req, res, next) => {
