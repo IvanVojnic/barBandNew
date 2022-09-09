@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="2DXi4sgIMZf64sCCsogK2kCl79P" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\проекты летом 2022\work2\barband\mobile\public\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="web" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/mobile/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="web" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.web" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="" />
+      <created>1660851642157</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660851642157</updated>
+      <workItem from="1660851643509" duration="3307000" />
+      <workItem from="1660892134907" duration="91000" />
+      <workItem from="1661190486779" duration="7256000" />
+      <workItem from="1661238415974" duration="1234000" />
+      <workItem from="1661252883758" duration="62000" />
+      <workItem from="1661253113194" duration="1947000" />
+      <workItem from="1661256317620" duration="10000" />
+      <workItem from="1661371577793" duration="4118000" />
+      <workItem from="1661412207763" duration="173000" />
+      <workItem from="1661450121419" duration="3201000" />
+      <workItem from="1661498122036" duration="37000" />
+      <workItem from="1661793747288" duration="9199000" />
+      <workItem from="1661845023987" duration="32000" />
+      <workItem from="1661884309189" duration="3188000" />
+      <workItem from="1661929587824" duration="69000" />
+      <workItem from="1661948353378" duration="278000" />
+      <workItem from="1661951127538" duration="6629000" />
+      <workItem from="1661963133146" duration="5303000" />
+      <workItem from="1662036057095" duration="6703000" />
+      <workItem from="1662119159601" duration="7308000" />
+      <workItem from="1662200205218" duration="2983000" />
+      <workItem from="1662311934797" duration="3234000" />
+      <workItem from="1662359604464" duration="41000" />
+      <workItem from="1662379360742" duration="5407000" />
+      <workItem from="1662564526155" duration="93000" />
+      <workItem from="1662564778430" duration="11536000" />
+      <workItem from="1662661458215" duration="3972000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
