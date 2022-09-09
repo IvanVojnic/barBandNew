@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from "react";
-import { View, Text} from "react-native";
+import {View, Text, FlatList} from "react-native";
 import {requestGetFriends} from "../../core/api/API";
+//import Checkbox from "../../assets/checkBox";
+import {stylesFriend} from "../../assets/stylesFriends";
+import {Checkbox} from "react-native-paper";
 
 const GetFriends = () => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -8,6 +11,7 @@ const GetFriends = () => {
     const [friends, setFriends] = useState([]);
     const [isSelected, setSelection] = useState(false);
     const [error, setError] = useState(null)
+    const [isFriendSelected, setIsFriendSelected] = useState(false)
 
     useEffect(() => {
         requestGetFriends().then((response) => {
@@ -27,23 +31,40 @@ const GetFriends = () => {
 
     return (
         <View>
-            {isLoaded ? message ? <span>message</span> : <ul>
+            {isLoaded ? message ? <span>message</span> :
+                    <View>
+                        {
+                            friends.map((item) => (
+                                <View style={stylesFriend.friendsList} key={item.id}>
+                                    <Checkbox
+                                        onPress={() => setIsFriendSelected(!isFriendSelected)}
+                                        status={isFriendSelected ? 'checked' : 'unchecked'}
+                                        color={'#00ff04'}
+                                        uncheckColor={'#fff'}
+                                    />
+                                    <Text>{item.email}</Text>
+                                </View>
+                            ))
+                        }
+                    </View>
+                : <span>{error}</span>}
+
+        </View>
+    )
+}
+
+/*
+<ul>
                 {friends.map(friend => (
                     <li>
-                        <CheckBox
-                            disabled={false}
-                            value={isSelected}
-                            onValueChange={(newValue) => setSelection(newValue)}
-                        />
+                        <Checkbox/>
                         <Text key={friend.id}>
                             {`${friend.name}, ${friend.email}`}
                         </Text>
                     </li>
                 ))}
-            </ul> : <span>{error}</span>}
-        </View>
-    )
-}
+            </ul>
+* */
 
 export default GetFriends
 

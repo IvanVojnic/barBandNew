@@ -12,7 +12,9 @@ export const stylesFriend = StyleSheet.create({
     },
     friendsList:{
         display: 'flex',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     inputField:{
         padding:'5px',
