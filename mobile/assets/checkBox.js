@@ -5,20 +5,22 @@ import {
 } from 'react-native';
 
 const Checkbox = (props) => {
-   /* const [selectColor, setSelectColor] = useState("#fff")
+    const [selectColor, setSelectColor] = useState("#fff")
     useEffect(() => {
-        if(props.isChecked){
+        let array = props.friendsArr
+        if(array.indexOf(props.friendId) !== -1){
             setSelectColor("#00ff04")
         } else {
             setSelectColor("#fff")
         }
-    }, [props.isChecked])*/
-    const selectColor = props.isChecked ? "#fff" : "#00ff04";
-
+    }, [props.friendsArrLen])
     return (
+        <View>
             <TouchableHighlight onPress={props.onPress} style={styles.CheckboxContainer}>
-                <View style={{backgroundColor: `${selectColor}`}}></View>
+                <View style={{backgroundColor: `${selectColor}`, height: 8, width: 8}}></View>
             </TouchableHighlight>
+        <Text>{props.title}</Text>
+        </View>
     );
 }
 
@@ -27,21 +29,17 @@ const styles = StyleSheet.create(
         CheckboxContainer: {
             display: 'inlineFlex',
             border: '3px solid green',
-            height: '10px',
-            width: '10px',
-            padding: 3,
+            height: '15px',
+            width: '15px',
+            padding: 2,
             alignItems: 'center',
             justifyContent: 'center'
         },
-        SelectSymbol: {
-           backgroundColor: '#00ff04'
-        }
     });
 
-/*
-Checkbox.propTypes = {
+/*Checkbox.propTypes = {
     keyValue: PropTypes.number.isRequired,
-    size: PropTypes.number,
+    }/*size: PropTypes.number,
     color: PropTypes.string,
     label: PropTypes.string,
     value: PropTypes.string,
@@ -59,3 +57,7 @@ Checkbox.defaultProps = {
 }*/
 
 export default Checkbox
+
+
+
+

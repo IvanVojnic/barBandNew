@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {View} from "react-native";
+import {View, TextInput} from "react-native";
 import {stylesFriend} from "../../assets/stylesFriends";
 
 const AddFriend = () => {
@@ -12,9 +12,8 @@ const AddFriend = () => {
     const [text, onChangeText] = useState("Useless Text");
 
 
-   /* useEffect(() => {
+    useEffect(() => {
         if(search){
-            alert("hello")
             fetch("http://localhost:5000/findFriend")
                 .then(res => res.json())
                 .then(
@@ -32,7 +31,7 @@ const AddFriend = () => {
             setSearch(false)
         }
     }, [search])
-
+/*
     useEffect(() => {
         fetch("http://localhost:5000/addFriend")
             .then(res => res.json())
@@ -50,10 +49,10 @@ const AddFriend = () => {
     return (
             <View>
                 <form onSubmit={() => {setSearch(true)}}>
-                    <label>
+                    <View>
                         Find Friend
-                        <input type="text" value={text} onChange={onChangeText}/>
-                    </label>
+                        <TextInput style={stylesFriend.input} placeholder="Ivanov" onChange={() => onChangeText(text)}/>
+                    </View>
                     <input type="submit" value="Find"/>
                 </form>
                 {isFindFriendPressed ? isNewFriendLoaded ? <ul>
@@ -62,9 +61,8 @@ const AddFriend = () => {
                             <form onSubmit={() => {setIsSendRequest(true)}}>
                                 <label>
                                     {`${newItem.name}`}
-                                    <input type="text" value={"hello"}/>
+                                    <input type="submit" value="Add Friend"/>
                                 </label>
-                                <input type="submit" value="Add Friend"/>
                             </form>
                         </li>
                     ))}

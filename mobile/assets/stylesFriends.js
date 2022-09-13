@@ -45,5 +45,13 @@ export const stylesFriend = StyleSheet.create({
     },
     checkbox: {
         alignSelf: "center",
+    },
+    input: {
+        width: '80%',
+        borderBottomWidth: 1,
+        borderBottomColor: 'black',
+        paddingTop: 10,
+        fontSize: 16,
+        minHeight: 40,
     }
 })

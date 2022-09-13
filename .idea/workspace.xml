@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="" />
+    <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/assets/checkBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/assets/checkBox.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/assets/stylesFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/assets/stylesFriends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +25,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
@@ -39,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dtlp/dtlp-ui/src/views" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -102,7 +114,17 @@
       <workItem from="1662564526155" duration="93000" />
       <workItem from="1662564778430" duration="11536000" />
       <workItem from="1662661458215" duration="3972000" />
+      <workItem from="1662735789164" duration="486000" />
+      <workItem from="1662987508436" duration="18351000" />
     </task>
+    <task id="LOCAL-00001" summary="test">
+      <created>1662735928676</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662735928676</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -119,5 +141,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
