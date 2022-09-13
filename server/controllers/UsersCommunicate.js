@@ -11,7 +11,18 @@ export const sendUsers = (req,res,next) => {
     })
 }
 
-export const testReq = (req, res, next) => {
+export const findUser = (req,res,next) => {
+    User.findOne({ where : {
+            name: req.body.name,
+            id : req.body.id,
+        }}).then(friend =>{
+        if(friend){
+            return res.status(200).json(friend);
+        }
+    })
+}
+
+/*export const testReq = (req, res, next) => {
     Friends.create({
         user1id : '1',
         user2id : '2',
@@ -21,4 +32,4 @@ export const testReq = (req, res, next) => {
             return res.status(200).json(record);
         }
     })
-}
+}*/

@@ -9,15 +9,4 @@ export const requestGetFriends = async () => {
       return 0
    }
 }
-    /*.then(res => res.json())
-    .then(
-        (result) => {
-          /*  if ("error" in result) {
-                return {error: result}
-            } else if (result === 0) {
-                return {noFriends: 0}
-            } else {
-                return result
-            //}
-        },*/
-  //  )}
+

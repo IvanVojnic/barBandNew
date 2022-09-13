@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/assets/checkBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/assets/checkBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/assets/stylesFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/assets/stylesFriends.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +113,7 @@
       <workItem from="1662564778430" duration="11536000" />
       <workItem from="1662661458215" duration="3972000" />
       <workItem from="1662735789164" duration="486000" />
-      <workItem from="1662987508436" duration="18351000" />
+      <workItem from="1662987508436" duration="19157000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
