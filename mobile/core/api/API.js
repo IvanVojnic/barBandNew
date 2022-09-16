@@ -1,4 +1,4 @@
-const urlAPI = 'http://localhost:5000'
+const urlAPI = 'http://localhost:3000'
 
 export const requestGetFriends = async () => {
    let response = await fetch(`${urlAPI}/getFriends`);
