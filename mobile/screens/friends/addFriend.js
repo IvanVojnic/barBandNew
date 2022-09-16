@@ -1,36 +1,38 @@
 import React, {useEffect, useState} from "react";
-import {View, TextInput} from "react-native";
+import {View, TextInput, Text} from "react-native";
 import {stylesFriend} from "../../assets/stylesFriends";
+import {requestFindFriends} from "../../core/api/API"
 
 const AddFriend = () => {
-
     const [search, setSearch] = useState(false)
-    const [newFriend, setNewFriend] = useState(null)
-    const [isNewFriendLoaded, setIsNewFriendLoaded] = useState(null)
+    const [newFriend, setNewFriend] = useState([])
+    const [isNewFriendLoaded, setIsNewFriendLoaded] = useState(false)
     const [isFindFriendPressed, setIsFindFriendPressed] = useState(false)
     const [isSendRequest, setIsSendRequest] = useState(null)
-    const [text, onChangeText] = useState("Useless Text");
-
+    const [email, onChangeEmail] = useState("");
 
     useEffect(() => {
-        if(search){
-            fetch("http://localhost:5000/findFriend")
-                .then(res => res.json())
-                .then(
-                    (result) => {
-                        if (result === 0) {
-                            setIsNewFriendLoaded(false)
-                        } else {
-                            setIsNewFriendLoaded(true)
-                            setNewFriend(result)
-                            console.log(result);
-                        }
-                        setIsFindFriendPressed(true)
-                    },
-                )
-            setSearch(false)
+        if (search) {
+            requestFindFriends(email).then((response) => {
+                alert(response)
+                 if (response === 0) {
+                    setIsNewFriendLoaded(false)
+                } else {
+                    setNewFriend(response)
+                    console.log(response);
+                    setIsNewFriendLoaded(true)
+                }
+                setIsFindFriendPressed(true)
+            }).catch(error => {
+                console.log(error);
+            })
         }
+        setSearch(false)
     }, [search])
+
+    useEffect(() => {
+        console.log(email)
+    }, [email])
 /*
     useEffect(() => {
         fetch("http://localhost:5000/addFriend")
@@ -50,13 +52,14 @@ const AddFriend = () => {
             <View>
                 <form onSubmit={() => {setSearch(true)}}>
                     <View>
-                        Find Friend
-                        <TextInput style={stylesFriend.input} placeholder="Ivanov" onChange={() => onChangeText(text)}/>
+                        <Text>Find Friend</Text>
+                        <TextInput style={stylesFriend.input} placeholder="Ivanov" onChange={() => {onChangeEmail(event.target.value)}}/>
                     </View>
                     <input type="submit" value="Find"/>
                 </form>
-                {isFindFriendPressed ? isNewFriendLoaded ? <ul>
-                    {newFriend.map(newItem => (
+                {isFindFriendPressed ? isNewFriendLoaded ? <View>
+                    {
+                        newFriend.map((newItem) => (
                         <li>
                             <form onSubmit={() => {setIsSendRequest(true)}}>
                                 <label>
@@ -66,7 +69,7 @@ const AddFriend = () => {
                             </form>
                         </li>
                     ))}
-                </ul> : <span>friend not found</span> : <div></div>}
+                </View> : <span>friend not found</span> : <div></div>}
             </View>
         )
 }

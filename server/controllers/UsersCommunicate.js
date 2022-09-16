@@ -6,6 +6,7 @@ export const sendUsers = (req,res,next) => {
         {raw:true,
             attributes:["email", "id", "name"]}).then(dbUsers => {
         if (dbUsers) {
+            console.log(dbUsers)
             return res.status(200).json(dbUsers);
         }
     })
@@ -13,10 +14,10 @@ export const sendUsers = (req,res,next) => {
 
 export const findUser = (req,res,next) => {
     User.findOne({ where : {
-            name: req.body.name,
-            id : req.body.id,
-        }}).then(friend =>{
+            email: req.body.email
+        }, raw: true, attributes:["email", "id", "name"]}).then(friend => {
         if(friend){
+            console.log(friend)
             return res.status(200).json(friend);
         }
     })
