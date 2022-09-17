@@ -27,3 +27,23 @@ export const requestFindFriends = async (emailUser) => {
       return 0
    }
 }
+
+export const onLoggedIn = async (token) => {
+   let response = await fetch(`${urlAPI}/private`, {
+      method: 'GET',
+      headers: {
+         'Content-Type': 'application/json',
+         'Authorization': `Bearer ${token}`,
+      },
+   })
+   if (response.ok) {
+      try {
+         const jsonRes = await res.json();
+         if (res.status === 200) {
+            return jsonRes.message;
+         }
+      } catch (err) {
+         console.log(err);
+      }
+   }
+}

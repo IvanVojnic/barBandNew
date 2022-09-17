@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, Platform, Image } from 'react-native';
-
+import {onLoggedIn} from '../core/api/API'
 const API_URL = Platform.OS === 'ios' ? 'http://localhost:5000' : 'http://localhost:5000';
 
 const AuthScreen = ({navigation}) => {
@@ -18,7 +18,7 @@ const AuthScreen = ({navigation}) => {
         setMessage('');
     };
 
-    const onLoggedIn = token => {
+    /*const onLoggedIn = token => {
         fetch(`${API_URL}/private`, {
             method: 'GET',
             headers: {
@@ -40,7 +40,7 @@ const AuthScreen = ({navigation}) => {
             console.log(err);
         });
     }
-
+*/
     const onSubmitHandler = () => {
         const payload = {
             email,
