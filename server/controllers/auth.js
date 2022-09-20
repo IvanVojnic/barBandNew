@@ -73,7 +73,7 @@ const login = (req, res, next) => {
 const isAuth = (req, res, next) => {
     const authHeader = req.get("Authorization");
     if (!authHeader) {
-        return res.status(401).json({ message: 'not authenticated' });
+        return res.status(401).json({ message: 'not authenticated', checkAuth: false });
     };
     const token = authHeader.split(' ')[1];
     let decodedToken;
@@ -85,7 +85,7 @@ const isAuth = (req, res, next) => {
     if (!decodedToken) {
         res.status(401).json({ message: 'unauthorized' });
     } else {
-        res.status(200).json({ message: 'here is your resource' });
+        res.status(200).json({ message: 'here is your resource', checkAuth: true });
     };
 };
 

@@ -1,4 +1,4 @@
-import React, {useEffect, useMemo, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
 import AddFriend from "./friends/addFriend";
 import GetFriends from "./friends/getFriends";
@@ -10,7 +10,7 @@ const FriendsScreen = ({navigation}) => {
         navigation.navigate('MainScreen');
     }
 
-    const [data, setData] = useState(null)
+   /* const [data, setData] = useState(null)
 
     const defaultValues = useMemo(() => ({
         friends: data?.friends || {}
@@ -25,7 +25,7 @@ const FriendsScreen = ({navigation}) => {
 
     useEffect(() => {
         reset(defaultValues)
-    }, [data])
+    }, [data])*/
 
     return (
         <View style={stylesFriend.Friend}>
