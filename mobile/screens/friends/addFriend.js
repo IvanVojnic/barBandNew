@@ -3,18 +3,17 @@ import {View, TextInput, Text} from "react-native";
 import {stylesFriend} from "../../assets/stylesFriends";
 import {requestFindFriends} from "../../core/api/API"
 
-const AddFriend = () => {
-    const [search, setSearch] = useState(false)
+const AddFriend = ({navigation}) => {
+    //const [search, setSearch] = useState(false)
     const [newFriend, setNewFriend] = useState([])
     const [isNewFriendLoaded, setIsNewFriendLoaded] = useState(false)
     const [isFindFriendPressed, setIsFindFriendPressed] = useState(false)
     const [isSendRequest, setIsSendRequest] = useState(null)
     const [email, onChangeEmail] = useState("");
 
-    useEffect(() => {
+   /* useEffect(() => {
         if (search) {
             requestFindFriends(email).then((response) => {
-                alert(response)
                  if (response === 0) {
                     setIsNewFriendLoaded(false)
                 } else {
@@ -28,11 +27,27 @@ const AddFriend = () => {
             })
         }
         setSearch(false)
-    }, [search])
+    }, [search])*/
 
     useEffect(() => {
         console.log(email)
     }, [email])
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        requestFindFriends(email).then((response) => {
+            if (response === 0) {
+                setIsNewFriendLoaded(false)
+            } else {
+                setNewFriend(response)
+                console.log(response);
+                setIsNewFriendLoaded(true)
+            }
+            setIsFindFriendPressed(true)
+        }).catch(error => {
+            console.log(error);
+        })
+    }
 /*
     useEffect(() => {
         fetch("http://localhost:5000/addFriend")
@@ -50,7 +65,7 @@ const AddFriend = () => {
 
     return (
             <View>
-                <form onSubmit={() => {setSearch(true)}}>
+                <form onSubmit={handleSubmit}>
                     <View>
                         <Text>Find Friend</Text>
                         <TextInput style={stylesFriend.input} placeholder="Ivanov" onChange={() => {onChangeEmail(event.target.value)}}/>

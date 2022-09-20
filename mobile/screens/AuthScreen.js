@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, Platform, Image } from 'react-native';
 import {onLoggedIn} from '../core/api/API'
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 const API_URL = Platform.OS === 'ios' ? 'http://localhost:5000' : 'http://localhost:5000';
+
+const storeData = async (value) => {
+    try {
+        await AsyncStorage.setItem('accessToken', value)
+    } catch (e) {
+        console.log(e)
+    }
+}
 
 const AuthScreen = ({navigation}) => {
 
@@ -18,29 +28,6 @@ const AuthScreen = ({navigation}) => {
         setMessage('');
     };
 
-    /*const onLoggedIn = token => {
-        fetch(`${API_URL}/private`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`,
-            },
-        })
-        .then(async res => {
-            try {
-                const jsonRes = await res.json();
-                if (res.status === 200) {
-                    setMessage(jsonRes.message);
-                }
-            } catch (err) {
-                console.log(err);
-            };
-        })
-        .catch(err => {
-            console.log(err);
-        });
-    }
-*/
     const onSubmitHandler = () => {
         const payload = {
             email,
@@ -63,6 +50,7 @@ const AuthScreen = ({navigation}) => {
                 } else {
                     onLoggedIn(jsonRes.token);
                     setIsError(false);
+                    storeData(jsonRes.token)
                     setMessage(jsonRes.message);
                     if(isLogin){
                         navigation.navigate('MainScreen');
