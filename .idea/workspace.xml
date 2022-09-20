@@ -4,13 +4,7 @@
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/FriendsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/FriendsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +119,7 @@
       <workItem from="1663320913634" duration="5398000" />
       <workItem from="1663353708796" duration="7387000" />
       <workItem from="1663403875605" duration="9693000" />
-      <workItem from="1663593103714" duration="9318000" />
+      <workItem from="1663593103714" duration="12517000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

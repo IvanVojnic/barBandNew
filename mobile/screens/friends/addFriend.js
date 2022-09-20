@@ -5,7 +5,7 @@ import {requestFindFriends} from "../../core/api/API"
 
 const AddFriend = ({navigation}) => {
     //const [search, setSearch] = useState(false)
-    const [newFriend, setNewFriend] = useState([])
+    const [newFriend, setNewFriend] = useState(null)
     const [isNewFriendLoaded, setIsNewFriendLoaded] = useState(false)
     const [isFindFriendPressed, setIsFindFriendPressed] = useState(false)
     const [isSendRequest, setIsSendRequest] = useState(null)
@@ -74,16 +74,15 @@ const AddFriend = ({navigation}) => {
                 </form>
                 {isFindFriendPressed ? isNewFriendLoaded ? <View>
                     {
-                        newFriend.map((newItem) => (
-                        <li>
+                        <View>
                             <form onSubmit={() => {setIsSendRequest(true)}}>
                                 <label>
-                                    {`${newItem.name}`}
+                                    <Text>{`${newFriend.name}`}</Text>
                                     <input type="submit" value="Add Friend"/>
                                 </label>
                             </form>
-                        </li>
-                    ))}
+                        </View>
+                    }
                 </View> : <span>friend not found</span> : <div></div>}
             </View>
         )

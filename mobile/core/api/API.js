@@ -31,21 +31,22 @@ export const requestFindFriends = async (emailUser) => {
          'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify({email: emailUser})
-   }).then(async res => {
-      try{
+   })/*.then(async res => {
+      try{*/
             if (res.ok) {
                if(isAuth){
-                  console.log(res);
-                  alert(res);
-                  return await res.json();
+                  const jsonRes = await res.json();
+                  console.log(jsonRes);
+                  alert(jsonRes);
+                  return jsonRes;
                }
             }
-      } catch (err) {
+     /* } catch (err) {
          console.log(err);
-      }
-   }).catch(err => {
+      }*/
+   /*}).catch(err => {
       console.log(err);
-   });
+   });*/
   /* if (response.ok) {
       console.log(response)
       alert(response)
@@ -63,16 +64,17 @@ export const onLoggedIn = async (token) => {
          'Content-Type': 'application/json;charset=utf-8',
          'Authorization': `Bearer ${token}`,
       },
-   }).then(async response => {
-      if (response.ok) {
-         try {
-            const jsonRes = await response.json();
-            return jsonRes.checkAuth
-         } catch (err) {
-            console.log(err);
-         }
+   })/*.then(async response => {*/
+   if (response.ok) {
+      try {
+         const jsonRes = await response.json();
+         console.log(jsonRes);
+         return jsonRes.checkAuth;
+      } catch (err) {
+         console.log(err);
       }
-   }).catch(err => {
+   }
+   /*}).catch(err => {
       console.log(err);
-   });
+   });*/
 }
