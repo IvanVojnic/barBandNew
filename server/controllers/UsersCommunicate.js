@@ -35,3 +35,18 @@ export const findUser = (req,res,next) => {
         }
     })
 }*/
+
+export const sendReq = (req, res, next) => {
+     let userSender = req.body.userSender;
+     let userReciever = req.body.userReciever;
+     Friends.create({
+         user1id : userSender,
+         user2id : userReciever,
+         status : 'request'
+     }).then(message =>{
+         if (message) {
+             return res.status(200).json('users successfully added to Friends table ');
+         }
+     })
+
+}
