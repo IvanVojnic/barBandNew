@@ -18,7 +18,6 @@ router.get('/public', (req, res, next) => {
     res.status(200).json({ message: "here is your public resource" });
 });
 
-//router.get('/test', testReq);
 
 router.get('/')
 

@@ -18,6 +18,7 @@ export const findUser = (req,res,next) => {
         }, raw: true, attributes:["email", "id", "name"]}).then(friend => {
         if(friend){
             console.log(friend)
+            console.log("kkk")
             return res.status(200).json(friend);
         }
     })
