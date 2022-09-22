@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, Platform, Image } from 'react-native';
 
-const API_URL = Platform.OS === 'ios' ? 'http://localhost:5000' : 'http://localhost:5000';
+const API_URL = Platform.OS === 'ios' ? 'http://localhost:3000' : 'http://localhost:3000';
 
 const AuthScreen = ({navigation}) => {
 
