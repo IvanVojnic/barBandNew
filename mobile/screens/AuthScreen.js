@@ -3,7 +3,7 @@ import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, P
 import {onLoggedIn} from '../core/api/API'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const API_URL = Platform.OS === 'ios' ? 'http://localhost:3000' : 'http://localhost:3000';
+const API_URL = Platform.OS === 'ios' ? 'http://localhost:5000' : 'http://localhost:5000';
 
 const storeData = async (value) => {
     try {

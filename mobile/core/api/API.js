@@ -22,6 +22,23 @@ export const requestGetFriends = async () => {
    }
 }
 
+export const sendRequest = async (userSenderID, userRecieverID) => {
+   let res = await fetch(`${urlAPI}/sendRequest`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({userSender: userSenderID, userReciever: userRecieverID})
+   })
+   if (res.ok) {
+      const jsonRes = await res.json();
+      alert(jsonRes);
+      return jsonRes;
+      console.log(response);
+      return 0;
+   }
+}
+
 export const requestFindFriends = async (emailUser) => {
    const token = await getData();
    const isAuth = await onLoggedIn(token);
@@ -31,30 +48,13 @@ export const requestFindFriends = async (emailUser) => {
          'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify({email: emailUser})
-   })/*.then(async res => {
-      try{*/
-            if (res.ok) {
-               if(isAuth){
-                  const jsonRes = await res.json();
-                  console.log(jsonRes);
-                  alert(jsonRes);
-                  return jsonRes;
-               }
-            }
-     /* } catch (err) {
-         console.log(err);
-      }*/
-   /*}).catch(err => {
-      console.log(err);
-   });*/
-  /* if (response.ok) {
-      console.log(response)
-      alert(response)
-      return await response.json();
-   } else {
-      console.log(response)
-      return 0
-   }*/
+   })
+   if (res.ok) {
+      if(isAuth){
+         const jsonRes = await res.json();
+         return jsonRes;
+      }
+   }
 }
 
 export const onLoggedIn = async (token) => {
@@ -64,7 +64,7 @@ export const onLoggedIn = async (token) => {
          'Content-Type': 'application/json;charset=utf-8',
          'Authorization': `Bearer ${token}`,
       },
-   })/*.then(async response => {*/
+   })
    if (response.ok) {
       try {
          const jsonRes = await response.json();
@@ -74,7 +74,4 @@ export const onLoggedIn = async (token) => {
          console.log(err);
       }
    }
-   /*}).catch(err => {
-      console.log(err);
-   });*/
 }
