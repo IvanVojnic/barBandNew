@@ -5,9 +5,17 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const API_URL = Platform.OS === 'ios' ? 'http://localhost:5000' : 'http://localhost:5000';
 
-const storeData = async (value) => {
+const storeAccessToken = async (value) => {
     try {
         await AsyncStorage.setItem('accessToken', value)
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+const storeId = async (value) => {
+    try {
+        await AsyncStorage.setItem('userId', value)
     } catch (e) {
         console.log(e)
     }
@@ -48,9 +56,10 @@ const AuthScreen = ({navigation}) => {
                     setIsError(true);
                     setMessage(jsonRes.message);
                 } else {
-                    onLoggedIn(jsonRes.token);
+                    await onLoggedIn(jsonRes.token);
                     setIsError(false);
-                    storeData(jsonRes.token)
+                    await storeId(jsonRes.id)
+                    await storeAccessToken(jsonRes.token)
                     setMessage(jsonRes.message);
                     if(isLogin){
                         navigation.navigate('MainScreen');

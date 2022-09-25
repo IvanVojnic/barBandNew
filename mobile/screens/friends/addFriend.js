@@ -26,13 +26,13 @@ const AddFriend = () => {
     }
 
     const requestSubmit = (e) => {
-        e.preventDefault();
-        sendRequest(myId, userId).then((response) => {
+        /*e.preventDefault();
+        sendRequest(userId).then((response) => {
             console.log(response);
             alert(response);
         }).catch(error => {
             console.log(error);
-        })
+        })*/
     }
 
     return (

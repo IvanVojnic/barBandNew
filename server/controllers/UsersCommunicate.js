@@ -38,10 +38,11 @@ export const findUser = (req,res,next) => {
 
 export const sendReq = (req, res, next) => {
      let userSender = req.body.userSender;
-     let userReciever = req.body.userReciever;
+     let userReceiver = req.body.userReceiver;
+    console.log("response sent")
      Friends.create({
          user1id : userSender,
-         user2id : userReciever,
+         user2id : userReceiver,
          status : 'request'
      }).then(message =>{
          if (message) {

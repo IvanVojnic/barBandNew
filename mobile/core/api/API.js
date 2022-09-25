@@ -1,9 +1,20 @@
 const urlAPI = 'http://localhost:5000'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const getData = async () => {
+const getAccessToken = async () => {
    try {
       const value = await AsyncStorage.getItem('accessToken');
+      if(value !== null) {
+         return value;
+      }
+   } catch(e) {
+      console.log(e);
+   }
+}
+
+const getId = async () => {
+   try {
+      const value = await AsyncStorage.getItem('userId');
       if(value !== null) {
          return value;
       }
@@ -22,25 +33,26 @@ export const requestGetFriends = async () => {
    }
 }
 
-export const sendRequest = async (userSenderID, userRecieverID) => {
+export const sendRequest = async (userReceiverID) => {
+   const userSenderID = await getId();
+   const token = await getAccessToken();
+   const isAuth = await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/sendRequest`, {
       method: 'POST',
       headers: {
          'Content-Type': 'application/json;charset=utf-8',
       },
-      body: JSON.stringify({userSender: userSenderID, userReciever: userRecieverID})
+      body: JSON.stringify({userSender: userSenderID, userReceiver: userReceiverID})
    })
    if (res.ok) {
-      const jsonRes = await res.json();
-      alert(jsonRes);
-      return jsonRes;
-      console.log(response);
-      return 0;
+      if(isAuth) {
+         return await res.json();
+      }
    }
 }
 
 export const requestFindFriends = async (emailUser) => {
-   const token = await getData();
+   const token = await getAccessToken();
    const isAuth = await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/findFriend`, {
       method: 'POST',
@@ -51,8 +63,7 @@ export const requestFindFriends = async (emailUser) => {
    })
    if (res.ok) {
       if(isAuth){
-         const jsonRes = await res.json();
-         return jsonRes;
+         return await res.json();
       }
    }
 }
