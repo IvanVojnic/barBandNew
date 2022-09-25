@@ -7,17 +7,25 @@ const Friends = sequelize.define('friends' , {
         type : Sequelize.INTEGER,
         autoIncrement: false,
         allowNull: false,
-        primaryKey: true,
+        primaryKey: false,
+        foreignKey : true,
     },
     user2id: {
         type : Sequelize.INTEGER,
         autoIncrement: false,
-        primaryKey: true,
+        primaryKey: false,
         allowNull: false,
+        foreignKey: true,
     },
     status: {
         type : Sequelize.STRING,
         allowNull: false,
+    },
+    friendship_id: {
+        type : Sequelize.INTEGER,
+        autoIncrement : true,
+        allowNull : false,
+        primaryKey : true,
     }
 })
 export default Friends
