@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize';
 
 import sequelize from '../utils/database.js';
+import User from "./user.js";
 
 const Friends = sequelize.define('friends' , {
     user1id: {
@@ -28,4 +29,5 @@ const Friends = sequelize.define('friends' , {
         primaryKey : true,
     }
 })
+
 export default Friends

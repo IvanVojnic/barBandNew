@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="test">
+      <change beforePath="$PROJECT_DIR$/.expo/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/friends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="voynich" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,6 +128,15 @@
       <workItem from="1663593103714" duration="12517000" />
       <workItem from="1663745903049" duration="9000" />
       <workItem from="1663878122101" duration="2151000" />
+      <workItem from="1663884062367" duration="1476000" />
+      <workItem from="1663353708796" duration="7387000" />
+      <workItem from="1663403875605" duration="9693000" />
+      <workItem from="1663593103714" duration="12517000" />
+      <workItem from="1663745903049" duration="9000" />
+      <workItem from="1663878122101" duration="2151000" />
+      <workItem from="1664009029081" duration="4667000" />
+      <workItem from="1664016832980" duration="597000" />
+      <workItem from="1664127055650" duration="1016000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
@@ -127,7 +145,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662735928676</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="test">
+      <created>1663883738416</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663883738416</updated>
+    </task>
+    <task id="LOCAL-00003" summary="test">
+      <created>1663887067182</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663887067182</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

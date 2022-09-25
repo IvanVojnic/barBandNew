@@ -22,5 +22,5 @@ const User = sequelize.define('users', {
       allowNull: false,
    },
 });
-User.hasMany(Friends);
+User.hasMany(Friends)
 export default User;

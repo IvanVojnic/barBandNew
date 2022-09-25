@@ -1,9 +1,20 @@
 const urlAPI = 'http://localhost:5000'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const getData = async () => {
+const getAccessToken = async () => {
    try {
       const value = await AsyncStorage.getItem('accessToken');
+      if(value !== null) {
+         return value;
+      }
+   } catch(e) {
+      console.log(e);
+   }
+}
+
+const getId = async () => {
+   try {
+      const value = await AsyncStorage.getItem('userId');
       if(value !== null) {
          return value;
       }
@@ -22,8 +33,26 @@ export const requestGetFriends = async () => {
    }
 }
 
+export const sendRequest = async (userReceiverID) => {
+   const userSenderID = await getId();
+   const token = await getAccessToken();
+   const isAuth = await onLoggedIn(token);
+   let res = await fetch(`${urlAPI}/sendRequest`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({userSender: userSenderID, userReceiver: userReceiverID})
+   })
+   if (res.ok) {
+      if(isAuth) {
+         return await res.json();
+      }
+   }
+}
+
 export const requestFindFriends = async (emailUser) => {
-   const token = await getData();
+   const token = await getAccessToken();
    const isAuth = await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/findFriend`, {
       method: 'POST',
@@ -31,30 +60,12 @@ export const requestFindFriends = async (emailUser) => {
          'Content-Type': 'application/json;charset=utf-8',
       },
       body: JSON.stringify({email: emailUser})
-   })/*.then(async res => {
-      try{*/
-            if (res.ok) {
-               if(isAuth){
-                  const jsonRes = await res.json();
-                  console.log(jsonRes);
-                  alert(jsonRes);
-                  return jsonRes;
-               }
-            }
-     /* } catch (err) {
-         console.log(err);
-      }*/
-   /*}).catch(err => {
-      console.log(err);
-   });*/
-  /* if (response.ok) {
-      console.log(response)
-      alert(response)
-      return await response.json();
-   } else {
-      console.log(response)
-      return 0
-   }*/
+   })
+   if (res.ok) {
+      if(isAuth){
+         return await res.json();
+      }
+   }
 }
 
 export const onLoggedIn = async (token) => {
@@ -64,7 +75,7 @@ export const onLoggedIn = async (token) => {
          'Content-Type': 'application/json;charset=utf-8',
          'Authorization': `Bearer ${token}`,
       },
-   })/*.then(async response => {*/
+   })
    if (response.ok) {
       try {
          const jsonRes = await response.json();
@@ -74,7 +85,4 @@ export const onLoggedIn = async (token) => {
          console.log(err);
       }
    }
-   /*}).catch(err => {
-      console.log(err);
-   });*/
 }
