@@ -1,32 +1,22 @@
 import { Sequelize } from 'sequelize';
-
 import sequelize from '../utils/database.js';
-import User from "./user.js";
 
 const Friends = sequelize.define('friends' , {
-    user1id: {
+    userSender: {
         type : Sequelize.INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        allowNull: false,
-        primaryKey: false,
-        foreignKey : true,
+        allowNull: false
     },
-    user2id: {
+    userReceiver: {
         type : Sequelize.INTEGER,
+        primaryKey: true,
         autoIncrement: false,
-        primaryKey: false,
-        allowNull: false,
-        foreignKey: true,
+        allowNull: false
     },
     status: {
         type : Sequelize.STRING,
-        allowNull: false,
-    },
-    friendship_id: {
-        type : Sequelize.INTEGER,
-        autoIncrement : true,
-        allowNull : false,
-        primaryKey : true,
+        allowNull: false
     }
 })
 

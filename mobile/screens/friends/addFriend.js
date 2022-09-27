@@ -5,6 +5,7 @@ import {requestFindFriends, sendRequest} from "../../core/api/API"
 
 const AddFriend = () => {
     const [newFriend, setNewFriend] = useState(null)
+    const [newFriendId, setNewFriendId] = useState(null)
     const [isNewFriendLoaded, setIsNewFriendLoaded] = useState(false)
     const [isFindFriendPressed, setIsFindFriendPressed] = useState(false)
     const [email, onChangeEmail] = useState("");
@@ -16,6 +17,7 @@ const AddFriend = () => {
                 setIsNewFriendLoaded(false)
             } else {
                 setNewFriend(response)
+                setNewFriendId(response.id)
                 console.log(response);
                 setIsNewFriendLoaded(true)
             }
@@ -26,13 +28,13 @@ const AddFriend = () => {
     }
 
     const requestSubmit = (e) => {
-        /*e.preventDefault();
-        sendRequest(userId).then((response) => {
+        e.preventDefault();
+        sendRequest(newFriendId).then((response) => {
             console.log(response);
             alert(response);
         }).catch(error => {
             console.log(error);
-        })*/
+        })
     }
 
     return (

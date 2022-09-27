@@ -1,5 +1,5 @@
 import User from '../models/user.js';
-import Friends from '../models/friends.js'
+import Friends from '../models/friends.js';
 
 export const sendUsers = (req,res,next) => {
     User.findAll(
@@ -24,30 +24,17 @@ export const findUser = (req,res,next) => {
     })
 }
 
-/*export const testReq = (req, res, next) => {
-    Friends.create({
-        user1id : '1',
-        user2id : '2',
-        status : 'request',
-    }).then(record => {
-        if (record) {
-            return res.status(200).json(record);
-        }
-    })
-}*/
-
 export const sendReq = (req, res, next) => {
      let userSender = req.body.userSender;
      let userReceiver = req.body.userReceiver;
-    console.log("response sent")
+     console.log("response sent")
      Friends.create({
-         user1id : userSender,
-         user2id : userReceiver,
+         userSender : userSender,
+         userReceiver : userReceiver,
          status : 'request'
      }).then(message =>{
          if (message) {
-             return res.status(200).json('users successfully added to Friends table ');
+             return res.status(200).json('users successfully added to Friends table');
          }
      })
-
 }
