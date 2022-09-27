@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.expo/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.expo/settings.json" beforeDir="false" />
+    <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="я тут что-то делал я не помню что">
+      <change afterPath="$PROJECT_DIR$/server/models/friendsReceiver.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/models/friendsSender.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/friends.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
     </list>
@@ -137,6 +134,8 @@
       <workItem from="1664009029081" duration="4667000" />
       <workItem from="1664016832980" duration="597000" />
       <workItem from="1664127055650" duration="1016000" />
+      <workItem from="1664180463125" duration="103000" />
+      <workItem from="1664291243324" duration="4739000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
@@ -179,6 +178,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="я тут что-то делал я не помню что" />
+    <option name="LAST_COMMIT_MESSAGE" value="я тут что-то делал я не помню что" />
   </component>
 </project>
