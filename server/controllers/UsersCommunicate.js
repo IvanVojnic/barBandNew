@@ -1,13 +1,39 @@
 import User from '../models/user.js';
 import Friends from '../models/friends.js';
+import {raw} from "express";
+import {where} from "sequelize";
+
+/*export const sendUsers = (req,res,next) => {
+    Friends.findOne({
+        where :{},
+        include: [{
+          where: {
+              userReceiver : User.dataValue.id,
+              status : 'request',
+          },
+          association : Friends
+        }]
+    }).then(listOfFriends =>{
+        if (listOfFriends){
+            console.log(kk);
+            res.status(200).json(listOfFriends);
+        }
+    })
+}*/
 
 export const sendUsers = (req,res,next) => {
-    User.findAll(
-        {raw:true,
-            attributes:["email", "id", "name"]}).then(dbUsers => {
-        if (dbUsers) {
-            console.log(dbUsers)
-            return res.status(200).json(dbUsers);
+    User.findAll({
+        include : {
+            model : Friends,
+            where : {
+                userReceiver : User.findByPk("id"),
+                status : "request",
+            }
+        }
+    }).then(listFr => {
+        if (listFr){
+            console.log("fr")
+            return res.status(200).json(listFr);
         }
     })
 }
