@@ -5,8 +5,16 @@ const Main = ({navigation}) => {
     const buttonFriendsHandler = () => {
         navigation.navigate('FriendsScreen');
     }
+    const buttonNotifications = () => {
+        navigation.navigate('NotificationsScreen');
+    }
     return (
         <View style={stylesMain.main}>
+            <View style={stylesMain.butFriendsWrapper}>
+                <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>
+                    <Text style={stylesMain.buttonFriendsText}>Notifications</Text>
+                </TouchableOpacity>
+            </View>
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonFriendsHandler}>
                     <Text style={stylesMain.buttonFriendsText}>Friends</Text>

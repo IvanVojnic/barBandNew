@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="я тут что-то делал я не помню что">
-      <change afterPath="$PROJECT_DIR$/server/models/friendsReceiver.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/friendsSender.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_09_2022_20_19_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_09_2022_20_19__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/friends.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/friends.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +135,11 @@
       <workItem from="1664016832980" duration="597000" />
       <workItem from="1664127055650" duration="1016000" />
       <workItem from="1664180463125" duration="103000" />
-      <workItem from="1664291243324" duration="4739000" />
+      <workItem from="1664291243324" duration="5483000" />
+      <workItem from="1664371962545" duration="796000" />
+      <workItem from="1664454187946" duration="693000" />
+      <workItem from="1664545393757" duration="2668000" />
+      <workItem from="1664567272129" duration="1194000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
@@ -169,7 +173,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
