@@ -1,4 +1,4 @@
-const urlAPI = 'http://localhost:5000'
+const urlAPI = 'http://localhost:3000'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const getAccessToken = async () => {
