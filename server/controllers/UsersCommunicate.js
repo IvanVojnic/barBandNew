@@ -1,7 +1,6 @@
 import User from '../models/user.js';
 import Friends from '../models/friends.js';
-import {raw} from "express";
-import {where} from "sequelize";
+import sequelize from "../utils/database.js";
 
 /*export const sendUsers = (req,res,next) => {
     Friends.findOne({
@@ -21,8 +20,14 @@ import {where} from "sequelize";
     })
 }*/
 
-export const sendUsers = (req,res,next) => {
-    User.findAll({
+export const sendUsers = async (req, res, next) => {
+    const [results, metadata] = await sequelize.query(
+        `SELECT users.id, users.email, users.name FROM users JOIN friends ON users.id = ${req.body.id} AND friends.status = 'request'`
+    );
+
+    console.log(JSON.stringify(results, null, 2));
+
+    /*User.findAll({
         include : {
             model : Friends,
             where : {
@@ -35,7 +40,7 @@ export const sendUsers = (req,res,next) => {
             console.log("fr")
             return res.status(200).json(listFr);
         }
-    })
+    })*/
 }
 
 export const findUser = (req,res,next) => {

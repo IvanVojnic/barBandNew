@@ -21,7 +21,7 @@ router.get('/public', (req, res, next) => {
 
 router.get('/')
 
-router.get('/getFriends', sendUsers);
+router.post('/getFriends', sendUsers);
 
 router.post('/findFriend',findUser);
 

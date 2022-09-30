@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="я тут что-то делал я не помню что">
-      <change afterPath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_09_2022_20_19_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_09_2022_20_19__Changes_.xml" beforeDir="false" />
+    <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
+      <change afterPath="$PROJECT_DIR$/mobile/env.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/env.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,11 +46,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/mobile/App.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/mobile/navigation.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/mobile/screens/AuthScreen.js" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/mobile/screens/FriendsScreen.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/mobile/screens/MainScreen.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/mobile/screens/index.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mobile/screens/FriendsScreen.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mobile/screens/AuthScreen.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/mobile/navigation.js" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/server/app.js" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2DXi4sgIMZf64sCCsogK2kCl79P" />
@@ -62,7 +63,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/mobile" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
@@ -70,7 +71,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\проекты летом 2022\work2\barband\mobile" />
       <recent name="D:\проекты летом 2022\work2\barband\mobile\public\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\проекты летом 2022\work2\barband\server" />
     </key>
   </component>
   <component name="RunManager">
@@ -148,7 +153,7 @@
       <workItem from="1664371962545" duration="796000" />
       <workItem from="1664454187946" duration="693000" />
       <workItem from="1664545393757" duration="2668000" />
-      <workItem from="1664567272129" duration="1194000" />
+      <workItem from="1664567272129" duration="7090000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
@@ -171,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663887067182</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add NotificationsScreen add button to notifications Screen">
+      <created>1664568851618</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664568851618</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -193,10 +205,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="я тут что-то делал я не помню что" />
-    <option name="LAST_COMMIT_MESSAGE" value="я тут что-то делал я не помню что" />
+    <MESSAGE value="add NotificationsScreen add button to notifications Screen" />
+    <option name="LAST_COMMIT_MESSAGE" value="add NotificationsScreen add button to notifications Screen" />
   </component>
 </project>

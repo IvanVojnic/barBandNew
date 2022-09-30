@@ -1,4 +1,5 @@
-const urlAPI = 'http://localhost:3000'
+import PORT from '../../env.js'
+const urlAPI = `http://localhost:${PORT}`
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const getAccessToken = async () => {
@@ -24,7 +25,14 @@ const getId = async () => {
 }
 
 export const requestGetFriends = async () => {
-   let response = await fetch(`${urlAPI}/getFriends`);
+   const userId = await getId();
+   let response = await fetch(`${urlAPI}/getFriends`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({id: userId})
+   });
    if (response.ok) {
       return await response.json();
    } else {
