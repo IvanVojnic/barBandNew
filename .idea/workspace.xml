@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/env.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/env.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +155,7 @@
       <workItem from="1664454187946" duration="693000" />
       <workItem from="1664545393757" duration="2668000" />
       <workItem from="1664567272129" duration="7150000" />
-      <workItem from="1664609242400" duration="1532000" />
+      <workItem from="1664609242400" duration="2437000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

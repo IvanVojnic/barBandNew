@@ -21,18 +21,27 @@ import sequelize from "../utils/database.js";
 }*/
 
 export const sendUsers = async (req, res, next) => {
-    const [results, metadata] = await sequelize.query(
+    const [resultsReceiver, metadata] = await sequelize.query(
         `select USERS.id, USERS.name, USERS.email
              from USERS
              inner join friends f on userReceiver = USERS.id WHERE userSender = ${req.body.id} AND status = 'request' `
     );
-   /* const [result, etadata] = await sequelize.query(
-        `SELECT users.id, users.email, users.name FROM users JOIN friends ON users.id = ${req.body.id} AND friends.status = 'request'`
+    const [resultsSender, metadata2] = await sequelize.query(
+        `select USERS.id, USERS.name, USERS.email
+             from USERS
+             inner join friends f on userSender = USERS.id WHERE userReceiver = ${req.body.id} AND status = 'request' `
     );
 
-    console.log(JSON.stringify(results, null, 2));*/
-    console.log(JSON.stringify(results, null, 2));
-    return res.status(200).json(results);
+
+    console.log(JSON.stringify(resultsReceiver));
+    console.log(JSON.stringify(resultsSender));
+
+    for(let i = 0; i < resultsSender.length; i++){
+        resultsReceiver.push(resultsSender[i])
+    }
+    console.log(JSON.stringify(resultsReceiver));
+
+    return res.status(200).json(resultsReceiver);
 
 
     /*User.findAll({
