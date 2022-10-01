@@ -22,11 +22,15 @@ import sequelize from "../utils/database.js";
 
 export const sendUsers = async (req, res, next) => {
     const [results, metadata] = await sequelize.query(
-        `select USERS.id, USERS.name
+        `select USERS.id, USERS.name, USERS.email
              from USERS
-             inner join friends f on userReceiver = USERS.id AND status = 'request' `
+             inner join friends f on userReceiver = USERS.id WHERE userSender = ${req.body.id} AND status = 'request' `
+    );
+   /* const [result, etadata] = await sequelize.query(
+        `SELECT users.id, users.email, users.name FROM users JOIN friends ON users.id = ${req.body.id} AND friends.status = 'request'`
     );
 
+    console.log(JSON.stringify(results, null, 2));*/
     console.log(JSON.stringify(results, null, 2));
     return res.status(200).json(results);
 
