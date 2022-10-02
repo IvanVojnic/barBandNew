@@ -2,24 +2,6 @@ import User from '../models/user.js';
 import Friends from '../models/friends.js';
 import sequelize from "../utils/database.js";
 
-/*export const sendUsers = (req,res,next) => {
-    Friends.findOne({
-        where :{},
-        include: [{
-          where: {
-              userReceiver : User.dataValue.id,
-              status : 'request',
-          },
-          association : Friends
-        }]
-    }).then(listOfFriends =>{
-        if (listOfFriends){
-            console.log(kk);
-            res.status(200).json(listOfFriends);
-        }
-    })
-}*/
-
 export const sendUsers = async (req, res, next) => {
     const [resultsReceiver, metadata] = await sequelize.query(
         `select USERS.id, USERS.name, USERS.email

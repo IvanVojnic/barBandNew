@@ -1,9 +1,20 @@
 import React from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
 
-const Notifications = ({navigation}) => {
+const Notifications = ({navigation, route}) => {
+    const { response } = route.params;
+    console.log(response)
     return(
-        <View>AAA</View>
+        <View><Text>AAA</Text>
+            <View>
+                <form onSubmit={response}>
+                    <label>
+                        <Text>{`${response.name}`}</Text>
+                        <input type="submit" value="Add Friend"/>
+                    </label>
+                </form>
+            </View>
+        </View>
     )
 }
 

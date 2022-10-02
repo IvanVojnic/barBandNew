@@ -24,6 +24,24 @@ const getId = async () => {
    }
 }
 
+export const requestNotifications = async () => {
+  /* const userId = await getId();
+   let response = await fetch(`${urlAPI}/getFriends`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({id: userId})
+   });
+   if (response.ok) {
+      return await response.json();
+   } else {
+      console.log(response);
+      return 0;
+   }*/
+   return 0;
+}
+
 export const requestGetFriends = async () => {
    const userId = await getId();
    let response = await fetch(`${urlAPI}/getFriends`, {

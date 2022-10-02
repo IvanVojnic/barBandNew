@@ -1,18 +1,36 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
+import {requestNotifications} from "../core/api/API";
 
 const Main = ({navigation}) => {
+
+    const [isNotifLoaded, setIsNotifLoaded] = useState(false);
+    const [notifCount, setNotifCount] = useState(0);
+    const [notifications, setNotifications] = useState(0);
+
+    useEffect(() => {
+        requestNotifications().then((response) => {
+            setNotifCount(response)
+            setNotifications(response)
+            console.log(response)
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }, [])
+
     const buttonFriendsHandler = () => {
         navigation.navigate('FriendsScreen');
     }
     const buttonNotifications = () => {
-        navigation.navigate('NotificationsScreen');
+        navigation.navigate('NotificationsScreen', {response: notifCount});
     }
     return (
         <View style={stylesMain.main}>
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>
                     <Text style={stylesMain.buttonFriendsText}>Notifications</Text>
+                    {isNotifLoaded && <Text style={stylesMain.notificationsCount}>2</Text>}
                 </TouchableOpacity>
             </View>
             <View style={stylesMain.butFriendsWrapper}>
@@ -32,6 +50,19 @@ const Main = ({navigation}) => {
 }
 
 const stylesMain = StyleSheet.create({
+    notificationsCount:{
+        position: 'absolute',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        height: '22px',
+        width: '22px',
+        fontSize: '14px',
+        border: '2px solid red',
+        borderRadius: '50%',
+        top:'2px',
+        right:'2px'
+    },
     main:{
         display: 'flex',
         flexDirection: 'column',
@@ -48,6 +79,7 @@ const stylesMain = StyleSheet.create({
         justifyContent: 'center'
     },
     buttonFriends:{
+        position:'relative',
         backgroundColor:'fff',
         border: '3px solid #9d0cff',
         borderRadius: '15px',
