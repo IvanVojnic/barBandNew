@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {View, Text, FlatList} from "react-native";
-import {requestGetFriends} from "../../core/api/API";
+import {getFriends} from "../../core/api/API";
 import Checkbox from "../../assets/checkBox"
 import {stylesFriend} from "../../assets/stylesFriends";
 
@@ -13,7 +13,7 @@ const GetFriends = () => {
     const [friendsCheckedList, setFriendsCheckedList] = useState([])
 
     useEffect(() => {
-        requestGetFriends().then((response) => {
+        getFriends().then((response) => {
             if (response === 1) {
                 setMessage("You don't have friends")
             } else if (response === 0) {

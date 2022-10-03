@@ -2,7 +2,29 @@ import User from '../models/user.js';
 import Friends from '../models/friends.js';
 import sequelize from "../utils/database.js";
 
-export const sendUsers = async (req, res, next) => {
+export const acceptFriendsRequest = async (req, res, next) => {
+
+}
+
+export const sendFriends = async (req, res, next) => {
+    const [resultsReceiver, metadata] = await sequelize.query(
+        `select USERS.id, USERS.name, USERS.email
+             from USERS
+             inner join friends f on userReceiver = USERS.id WHERE userSender = ${req.body.id} AND status = 'friends' `
+    );
+    const [resultsSender, metadata2] = await sequelize.query(
+        `select USERS.id, USERS.name, USERS.email
+             from USERS
+             inner join friends f on userSender = USERS.id WHERE userReceiver = ${req.body.id} AND status = 'friends' `
+    );
+    for(let i = 0; i < resultsSender.length; i++){
+        resultsReceiver.push(resultsSender[i])
+    }
+    console.log(JSON.stringify(resultsReceiver));
+    return res.status(200).json(resultsReceiver);
+}
+
+export const sendFriendsRequest = async (req, res, next) => {
     const [resultsReceiver, metadata] = await sequelize.query(
         `select USERS.id, USERS.name, USERS.email
              from USERS
@@ -13,33 +35,11 @@ export const sendUsers = async (req, res, next) => {
              from USERS
              inner join friends f on userSender = USERS.id WHERE userReceiver = ${req.body.id} AND status = 'request' `
     );
-
-
-    console.log(JSON.stringify(resultsReceiver));
-    console.log(JSON.stringify(resultsSender));
-
     for(let i = 0; i < resultsSender.length; i++){
         resultsReceiver.push(resultsSender[i])
     }
     console.log(JSON.stringify(resultsReceiver));
-
     return res.status(200).json(resultsReceiver);
-
-
-    /*User.findAll({
-        include : {
-            model : Friends,
-            where : {
-                userReceiver : User.findByPk("id"),
-                status : "request",
-            }
-        }
-    }).then(listFr => {
-        if (listFr){
-            console.log("fr")
-            return res.status(200).json(listFr);
-        }
-    })*/
 }
 
 export const findUser = (req,res,next) => {

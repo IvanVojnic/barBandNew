@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
-import {requestNotifications} from "../core/api/API";
+import {getNotifications} from "../core/api/API";
 
 const Main = ({navigation}) => {
 
@@ -9,10 +9,11 @@ const Main = ({navigation}) => {
     const [notifications, setNotifications] = useState(0);
 
     useEffect(() => {
-        requestNotifications().then((response) => {
-            setNotifCount(response)
+        getNotifications().then((response) => {
+            setNotifCount(response.length)
             setNotifications(response)
             console.log(response)
+            setIsNotifLoaded(true)
         }).catch(error => {
             console.log(error)
         })
@@ -23,14 +24,14 @@ const Main = ({navigation}) => {
         navigation.navigate('FriendsScreen');
     }
     const buttonNotifications = () => {
-        navigation.navigate('NotificationsScreen', {response: notifCount});
+        navigation.navigate('NotificationsScreen', {response: notifications});
     }
     return (
         <View style={stylesMain.main}>
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>
                     <Text style={stylesMain.buttonFriendsText}>Notifications</Text>
-                    {isNotifLoaded && <Text style={stylesMain.notificationsCount}>2</Text>}
+                    {isNotifLoaded && <Text style={stylesMain.notificationsCount}>{notifCount}</Text>}
                 </TouchableOpacity>
             </View>
             <View style={stylesMain.butFriendsWrapper}>

@@ -6,7 +6,10 @@
       <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +162,8 @@
       <workItem from="1664545393757" duration="2668000" />
       <workItem from="1664567272129" duration="7150000" />
       <workItem from="1664609242400" duration="2617000" />
-      <workItem from="1664710032716" duration="5295000" />
+      <workItem from="1664710032716" duration="6606000" />
+      <workItem from="1664790239832" duration="3454000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

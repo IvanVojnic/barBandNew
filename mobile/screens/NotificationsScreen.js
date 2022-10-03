@@ -3,16 +3,24 @@ import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
 
 const Notifications = ({navigation, route}) => {
     const { response } = route.params;
+    const acceptSubmit = (id, e) => {
+        e.preventDefault();
+
+    }
     console.log(response)
     return(
         <View><Text>AAA</Text>
             <View>
-                <form onSubmit={response}>
+                {
+                    response.map((item) => (
+                <form onSubmit={(e) => acceptSubmit(item.id, e)}>
                     <label>
-                        <Text>{`${response.name}`}</Text>
+                        <Text>{`${item.name}`}</Text>
                         <input type="submit" value="Add Friend"/>
                     </label>
                 </form>
+                    ))
+                }
             </View>
         </View>
     )
