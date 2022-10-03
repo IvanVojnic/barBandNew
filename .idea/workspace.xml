@@ -4,10 +4,7 @@
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
     </list>
@@ -163,7 +160,9 @@
       <workItem from="1664567272129" duration="7150000" />
       <workItem from="1664609242400" duration="2617000" />
       <workItem from="1664710032716" duration="6606000" />
-      <workItem from="1664790239832" duration="3454000" />
+      <workItem from="1664790239832" duration="3717000" />
+      <workItem from="1664805211724" duration="591000" />
+      <workItem from="1664819860377" duration="3849000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

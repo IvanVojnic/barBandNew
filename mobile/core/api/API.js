@@ -28,6 +28,7 @@ export const acceptRequestFriends = async (id) => {
    const userId = await getId();
    const token = await getAccessToken();
    const isAuth = await onLoggedIn(token);
+   console.log(id);
    let res = await fetch(`${urlAPI}/acceptFriendsRequest`, {
       method: 'POST',
       headers: {

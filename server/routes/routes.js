@@ -2,7 +2,7 @@ import express from 'express';
 
 import { signup, login, isAuth } from '../controllers/auth.js';
 
-import {sendFriends, findUser, sendReq, sendFriendsRequest} from '../controllers/UsersCommunicate.js';
+import {sendFriends, findUser, sendReq, sendFriendsRequest, acceptFriendsRequest} from '../controllers/UsersCommunicate.js';
 
 //import {testReq} from "../controllers/UsersCommunicate.js";
 
