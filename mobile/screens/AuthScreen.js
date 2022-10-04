@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, Platform, Image } from 'react-native';
 import {onLoggedIn} from '../core/api/API'
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import PORT from "../env.js";
 
-const API_URL = Platform.OS === 'ios' ? 'http://localhost:5000' : 'http://localhost:5000';
+const API_URL = Platform.OS === 'ios' ? `http://localhost:${PORT}` : `http://localhost:${PORT}`;
 
 const storeAccessToken = async (value) => {
     try {

@@ -1,15 +1,52 @@
 import User from '../models/user.js';
 import Friends from '../models/friends.js';
+import sequelize from "../utils/database.js";
 
-export const sendUsers = (req,res,next) => {
-    User.findAll(
-        {raw:true,
-            attributes:["email", "id", "name"]}).then(dbUsers => {
-        if (dbUsers) {
-            console.log(dbUsers)
-            return res.status(200).json(dbUsers);
-        }
-    })
+export const acceptFriendsRequest = async (req, res, next) => {
+    console.log(req.body.userSender);
+    console.log(req.body.userReceiver);
+    const [resultsReceiver, metadata] = await sequelize.query(
+        `UPDATE friends SET status = 'friends' WHERE userSender = ${req.body.userSender} AND userReceiver = ${req.body.userReceiver}`
+    );
+    if (resultsReceiver) {
+        return res.status(200).json('users successfully added to Friends table');
+    }
+}
+
+export const sendFriends = async (req, res, next) => {
+    const [resultsReceiver, metadata] = await sequelize.query(
+        `select USERS.id, USERS.name, USERS.email
+             from USERS
+             inner join friends f on userReceiver = USERS.id WHERE userSender = ${req.body.id} AND status = 'friends' `
+    );
+    const [resultsSender, metadata2] = await sequelize.query(
+        `select USERS.id, USERS.name, USERS.email
+             from USERS
+             inner join friends f on userSender = USERS.id WHERE userReceiver = ${req.body.id} AND status = 'friends' `
+    );
+    for(let i = 0; i < resultsSender.length; i++){
+        resultsReceiver.push(resultsSender[i])
+    }
+    console.log(JSON.stringify(resultsReceiver));
+    return res.status(200).json(resultsReceiver);
+}
+
+export const sendFriendsRequest = async (req, res, next) => {
+    const [resultsReceiver, metadata] = await sequelize.query(
+        `select USERS.id, USERS.name, USERS.email
+             from USERS
+             inner join friends f on userReceiver = USERS.id WHERE userSender = ${req.body.id} AND status = 'request' `
+    );
+    const [resultsSender, metadata2] = await sequelize.query(
+        `select USERS.id, USERS.name, USERS.email
+             from USERS
+             inner join friends f on userSender = USERS.id WHERE userReceiver = ${req.body.id} AND status = 'request' `
+    );
+    for(let i = 0; i < resultsSender.length; i++){
+        resultsReceiver.push(resultsSender[i])
+    }
+    console.log(JSON.stringify(resultsReceiver));
+    return res.status(200).json(resultsReceiver);
 }
 
 export const findUser = (req,res,next) => {

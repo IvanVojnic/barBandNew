@@ -1,4 +1,5 @@
-const urlAPI = 'http://localhost:5000'
+import PORT from '../../env.js'
+const urlAPI = `http://localhost:${PORT}`
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const getAccessToken = async () => {
@@ -23,8 +24,52 @@ const getId = async () => {
    }
 }
 
-export const requestGetFriends = async () => {
-   let response = await fetch(`${urlAPI}/getFriends`);
+export const acceptRequestFriends = async (id) => {
+   const userId = await getId();
+   const token = await getAccessToken();
+   const isAuth = await onLoggedIn(token);
+   console.log(id);
+   let res = await fetch(`${urlAPI}/acceptFriendsRequest`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({userSender: id, userReceiver: userId})
+   })
+   if (res.ok) {
+      if(isAuth) {
+         return await res.json();
+      }
+   }
+}
+
+export const getNotifications = async () => {
+   const userId = await getId();
+   let response = await fetch(`${urlAPI}/getFriendsRequest`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({id: userId})
+   });
+   if (response.ok) {
+      return await response.json();
+   } else {
+      console.log(response);
+      return 0;
+   }
+   return 0;
+}
+
+export const getFriends = async () => {
+   const userId = await getId();
+   let response = await fetch(`${urlAPI}/getFriends`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({id: userId})
+   });
    if (response.ok) {
       return await response.json();
    } else {
@@ -51,7 +96,7 @@ export const sendRequest = async (userReceiverID) => {
    }
 }
 
-export const requestFindFriends = async (emailUser) => {
+export const findFriends = async (emailUser) => {
    const token = await getAccessToken();
    const isAuth = await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/findFriend`, {

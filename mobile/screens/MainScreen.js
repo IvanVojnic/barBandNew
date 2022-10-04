@@ -1,12 +1,39 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
+import {getNotifications} from "../core/api/API";
 
 const Main = ({navigation}) => {
+
+    const [isNotifLoaded, setIsNotifLoaded] = useState(false);
+    const [notifCount, setNotifCount] = useState(0);
+    const [notifications, setNotifications] = useState(0);
+
+    useEffect(() => {
+        getNotifications().then((response) => {
+            setNotifCount(response.length)
+            setNotifications(response)
+            console.log(response)
+            setIsNotifLoaded(true)
+        }).catch(error => {
+            console.log(error)
+        })
+
+    }, [])
+
     const buttonFriendsHandler = () => {
         navigation.navigate('FriendsScreen');
     }
+    const buttonNotifications = () => {
+        navigation.navigate('NotificationsScreen', {response: notifications});
+    }
     return (
         <View style={stylesMain.main}>
+            <View style={stylesMain.butFriendsWrapper}>
+                <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>
+                    <Text style={stylesMain.buttonFriendsText}>Notifications</Text>
+                    {isNotifLoaded && <Text style={stylesMain.notificationsCount}>{notifCount}</Text>}
+                </TouchableOpacity>
+            </View>
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonFriendsHandler}>
                     <Text style={stylesMain.buttonFriendsText}>Friends</Text>
@@ -24,6 +51,19 @@ const Main = ({navigation}) => {
 }
 
 const stylesMain = StyleSheet.create({
+    notificationsCount:{
+        position: 'absolute',
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center',
+        height: '22px',
+        width: '22px',
+        fontSize: '14px',
+        border: '2px solid red',
+        borderRadius: '50%',
+        top:'2px',
+        right:'2px'
+    },
     main:{
         display: 'flex',
         flexDirection: 'column',
@@ -40,6 +80,7 @@ const stylesMain = StyleSheet.create({
         justifyContent: 'center'
     },
     buttonFriends:{
+        position:'relative',
         backgroundColor:'fff',
         border: '3px solid #9d0cff',
         borderRadius: '15px',

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {View, TextInput, Text} from "react-native";
 import {stylesFriend} from "../../assets/stylesFriends";
-import {requestFindFriends, sendRequest} from "../../core/api/API"
+import {findFriends, sendRequest} from "../../core/api/API"
 
 const AddFriend = () => {
     const [newFriend, setNewFriend] = useState(null)
@@ -12,7 +12,7 @@ const AddFriend = () => {
 
     const findSubmit = (e) => {
         e.preventDefault();
-        requestFindFriends(email).then((response) => {
+        findFriends(email).then((response) => {
             if (response === 0) {
                 setIsNewFriendLoaded(false)
             } else {

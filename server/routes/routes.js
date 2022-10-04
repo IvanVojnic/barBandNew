@@ -2,7 +2,7 @@ import express from 'express';
 
 import { signup, login, isAuth } from '../controllers/auth.js';
 
-import {sendUsers, findUser, sendReq} from '../controllers/UsersCommunicate.js';
+import {sendFriends, findUser, sendReq, sendFriendsRequest, acceptFriendsRequest} from '../controllers/UsersCommunicate.js';
 
 //import {testReq} from "../controllers/UsersCommunicate.js";
 
@@ -18,10 +18,13 @@ router.get('/public', (req, res, next) => {
     res.status(200).json({ message: "here is your public resource" });
 });
 
-
 router.get('/')
 
-router.get('/getFriends', sendUsers);
+router.post('/getFriends', sendFriends);
+
+router.post('/getFriendsRequest', sendFriendsRequest);
+
+router.post('/acceptFriendsRequest', acceptFriendsRequest);
 
 router.post('/findFriend',findUser);
 

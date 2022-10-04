@@ -1,4 +1,6 @@
 import express from 'express';
+import PORT from "./env.js";
+
 
 import sequelize from './utils/database.js';
 
@@ -32,4 +34,4 @@ sequelize.sync({force:false}).then(()=>{
     console.log("Tables have been created");
 }).catch(err=>console.log(err));
 
-app.listen(5000);
+app.listen(PORT);
