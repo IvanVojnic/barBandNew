@@ -39,7 +39,7 @@ const Main = ({navigation}) => {
         display:'flex',
         width: '80%',
         height:'80%',
-        zIndex: 5,
+        zIndex: 2,
         border: '2px solid #ff0000',
         borderRadius:'5px',
         transitionDuration: '0.5s'

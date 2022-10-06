@@ -24,6 +24,25 @@ const getId = async () => {
    }
 }
 
+export const sendInvite = async (userFriendsList) => {
+   const userId = await getId();
+   const token = await getAccessToken();
+   const isAuth = await onLoggedIn(token);
+   console.log(id);
+   let res = await fetch(`${urlAPI}/sendInvite`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({userSender: userId, friendsList: userFriendsList})
+   })
+   if (res.ok) {
+      if(isAuth) {
+         return await res.json();
+      }
+   }
+}
+
 export const acceptRequestFriends = async (id) => {
    const userId = await getId();
    const token = await getAccessToken();

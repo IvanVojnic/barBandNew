@@ -2,7 +2,14 @@ import express from 'express';
 
 import { signup, login, isAuth } from '../controllers/auth.js';
 
-import {sendFriends, findUser, sendReq, sendFriendsRequest, acceptFriendsRequest} from '../controllers/UsersCommunicate.js';
+import {
+    sendFriends,
+    findUser,
+    sendReq,
+    sendFriendsRequest,
+    acceptFriendsRequest,
+    sendInvite
+} from '../controllers/UsersCommunicate.js';
 
 //import {testReq} from "../controllers/UsersCommunicate.js";
 
@@ -29,6 +36,8 @@ router.post('/acceptFriendsRequest', acceptFriendsRequest);
 router.post('/findFriend',findUser);
 
 router.post('/sendRequest' , sendReq);
+
+router.post('/sendInvite' , sendInvite);
 
 // will match any other path
 router.use('/', (req, res, next) => {

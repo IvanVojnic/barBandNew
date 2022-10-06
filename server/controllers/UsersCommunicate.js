@@ -2,6 +2,12 @@ import User from '../models/user.js';
 import Friends from '../models/friends.js';
 import sequelize from "../utils/database.js";
 
+export const sendInvite = (req, res, next) => {
+    console.log("_________________________");
+    console.log(req.body.friendsList);
+    return res.status(200).json('invite sends');
+}
+
 export const acceptFriendsRequest = async (req, res, next) => {
     console.log(req.body.userSender);
     console.log(req.body.userReceiver);

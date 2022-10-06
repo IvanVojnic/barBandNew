@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {View, Text, FlatList} from "react-native";
-import {getFriends} from "../../core/api/API";
+import {View, Text, TouchableOpacity, StyleSheet} from "react-native";
+import {getFriends, sendInvite} from "../../core/api/API";
 import Checkbox from "../../assets/checkBox"
 import {stylesFriend} from "../../assets/stylesFriends";
+
 
 const GetFriends = (isModal) => {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -11,6 +12,7 @@ const GetFriends = (isModal) => {
     const [error, setError] = useState(null)
     const [friendsArrLen, setFriendsArrLen] = useState(0)
     const [friendsCheckedList, setFriendsCheckedList] = useState([])
+    const [isShowButton, setIsShowButton] = useState(false)
 
     useEffect(() => {
         getFriends().then((response) => {
@@ -28,6 +30,15 @@ const GetFriends = (isModal) => {
 
     }, [])
 
+    useEffect(() => {
+        if(friendsArrLen!=0){
+            setIsShowButton(true)
+        } else {
+            setIsShowButton(false)
+        }
+        console.log(friendsCheckedList)
+    }, [friendsArrLen])
+
     function selectUser(id) {
         let itemIndex = friendsCheckedList.indexOf(id)
         if(itemIndex !== -1) {
@@ -41,11 +52,24 @@ const GetFriends = (isModal) => {
         }
     }
 
+    const sendInviteHandler = (e) => {
+        e.preventDefault();
+
+        sendInvite(friendsCheckedList).then((response) => {
+            console.log(response)
+        })
+    }
+
     return (
         <View>
+            {isShowButton &&
+            <TouchableOpacity style={stylesModalWindowButton.button} onPress={sendInviteHandler}>
+                <Text style={stylesModalWindowButton.buttonInviteText}>send invite</Text>
+            </TouchableOpacity>
+            }
             {isLoaded ? message ? <span>message</span> :
                     <View>
-                        {(isModal == true) ?
+                        {(isModal.isModal == true) ?
                             friends.map((item) => (
                                 <View style={stylesFriend.friendsList}>
                                      <Checkbox onPress={() => {selectUser(item.id)}}
@@ -67,18 +91,25 @@ const GetFriends = (isModal) => {
     )
 }
 
-/*
-<ul>
-                {friends.map(friend => (
-                    <li>
-                        <Checkbox/>
-                        <Text key={friend.id}>
-                            {`${friend.name}, ${friend.email}`}
-                        </Text>
-                    </li>
-                ))}
-            </ul>
-* */
+const stylesModalWindowButton = StyleSheet.create({
+    button: {
+        zIndex: 2,
+        backgroundColor:'fff',
+        border: '3px solid #9d0cff',
+        borderRadius: '15px',
+        boxSizing: 'borderBox',
+        minWidth: '30px',
+        fontSize:'20px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    buttonInviteText:{
+        padding: '10px',
+        color: '#000',
+        fontSize: '30px'
+    }
+})
 
 export default GetFriends
 

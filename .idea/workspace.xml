@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
-      <change afterPath="$PROJECT_DIR$/mobile/screens/sendInviteModalScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/FriendsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/FriendsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/NotificationsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/sendInviteModalScreen.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +172,8 @@
       <workItem from="1664970545011" duration="7435000" />
       <workItem from="1664992428567" duration="2065000" />
       <workItem from="1665069287881" duration="380000" />
-      <workItem from="1665070025306" duration="1632000" />
+      <workItem from="1665070025306" duration="1786000" />
+      <workItem from="1665079888915" duration="3917000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
