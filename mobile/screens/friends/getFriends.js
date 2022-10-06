@@ -4,7 +4,7 @@ import {getFriends} from "../../core/api/API";
 import Checkbox from "../../assets/checkBox"
 import {stylesFriend} from "../../assets/stylesFriends";
 
-const GetFriends = () => {
+const GetFriends = (isModal) => {
     const [isLoaded, setIsLoaded] = useState(false);
     const [message, setMessage] = useState(null)
     const [friends, setFriends] = useState([]);
@@ -45,15 +45,19 @@ const GetFriends = () => {
         <View>
             {isLoaded ? message ? <span>message</span> :
                     <View>
-                        {
+                        {(isModal == true) ?
                             friends.map((item) => (
                                 <View style={stylesFriend.friendsList}>
-                                <Checkbox onPress={() => {selectUser(item.id)}}
-                                friendsArr={friendsCheckedList}
-                                friendsArrLen={friendsArrLen}
-                                title={item.email}
-                                friendId={item.id}
-                                />
+                                     <Checkbox onPress={() => {selectUser(item.id)}}
+                                                         friendsArr={friendsCheckedList}
+                                                         friendsArrLen={friendsArrLen}
+                                                         title={item.email}
+                                                         friendId={item.id}
+                                    />
+                                </View>
+                            )) : friends.map((item) => (
+                                <View style={stylesFriend.friendsList}>
+                                    <Text>{item.email}</Text>
                                 </View>
                             ))
                         }
