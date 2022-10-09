@@ -28,7 +28,6 @@ export const sendInvite = async (userFriendsList) => {
    const userId = await getId();
    const token = await getAccessToken();
    const isAuth = await onLoggedIn(token);
-   console.log(id);
    let res = await fetch(`${urlAPI}/sendInvite`, {
       method: 'POST',
       headers: {

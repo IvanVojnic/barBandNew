@@ -9,8 +9,6 @@ export const sendInvite = (req, res, next) => {
 }
 
 export const acceptFriendsRequest = async (req, res, next) => {
-    console.log(req.body.userSender);
-    console.log(req.body.userReceiver);
     const [resultsReceiver, metadata] = await sequelize.query(
         `UPDATE friends SET status = 'friends' WHERE userSender = ${req.body.userSender} AND userReceiver = ${req.body.userReceiver}`
     );

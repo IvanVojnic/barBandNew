@@ -92,17 +92,16 @@ const stylesMain = StyleSheet.create({
     },
     buttonCloseModal:{
         display: 'flex',
-        width: '30px',
-        height: '30px',
         alignItems: 'center',
         justifyContent: 'center'
     },
     buttonCloseModalText:{
-        color:'#fff',
+        color:'#000',
         fontSize:'20px',
         fontWeight: 'bold'
     },
     notificationsCount:{
+        padding:'15px',
         position: 'absolute',
         display:'flex',
         alignItems:'center',
