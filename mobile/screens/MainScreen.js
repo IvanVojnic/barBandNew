@@ -1,46 +1,82 @@
 import React, {useEffect, useState} from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
 import {getNotifications} from "../core/api/API";
+import GetFriends from "./friends/getFriends";
 
 const Main = ({navigation}) => {
 
+    const [modalVisible, setModalVisible] = useState(false);
     const [isNotifLoaded, setIsNotifLoaded] = useState(false);
     const [notifCount, setNotifCount] = useState(0);
     const [notifications, setNotifications] = useState(0);
+    const [opacity, setOpacity] = useState(0);
+    const [visibility, setVisibility] = useState('hidden');
 
     useEffect(() => {
         getNotifications().then((response) => {
             setNotifCount(response.length)
             setNotifications(response)
-            console.log(response)
             setIsNotifLoaded(true)
         }).catch(error => {
             console.log(error)
         })
-
     }, [])
 
     const buttonFriendsHandler = () => {
         navigation.navigate('FriendsScreen');
     }
+
     const buttonNotifications = () => {
         navigation.navigate('NotificationsScreen', {response: notifications});
     }
+
+    let modalWindowShow = {
+        opacity: `${opacity}`,
+        visibility: `${visibility}`,
+        backgroundColor:'#efefef',
+        color:'#000',
+        position:'absolute',
+        display:'flex',
+        width: '80%',
+        height:'80%',
+        zIndex: 2,
+        border: '2px solid #ff0000',
+        borderRadius:'5px',
+        transitionDuration: '0.5s'
+    }
+
+    useEffect(() => {
+        if (!modalVisible) {
+            setOpacity(0);
+            setVisibility('hidden');
+        } else {
+            setOpacity(1);
+            setVisibility('visible');
+        }
+    }, [modalVisible])
+
     return (
         <View style={stylesMain.main}>
+            <View style={modalWindowShow}>
+                <TouchableOpacity style={stylesMain.buttonCloseModal} onPress={() => {setModalVisible(false)}}>
+                    <Text style={stylesMain.buttonCloseModalText}>Close</Text>
+                </TouchableOpacity>
+                <GetFriends isModal={true}/>
+            </View>
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>
                     <Text style={stylesMain.buttonFriendsText}>Notifications</Text>
                     {isNotifLoaded && <Text style={stylesMain.notificationsCount}>{notifCount}</Text>}
                 </TouchableOpacity>
             </View>
+
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonFriendsHandler}>
                     <Text style={stylesMain.buttonFriendsText}>Friends</Text>
                 </TouchableOpacity>
             </View>
             <View style={stylesMain.butInviteWrapper}>
-                <TouchableOpacity style={stylesMain.buttonInvite}>
+                <TouchableOpacity style={stylesMain.buttonInvite} onPress={() => {setModalVisible(true)}}>
                     <View style={stylesMain.insideButtonCircle}>
                     <Text style={stylesMain.buttonInviteText}>Invite</Text>
                     </View>
@@ -51,7 +87,21 @@ const Main = ({navigation}) => {
 }
 
 const stylesMain = StyleSheet.create({
+    modalWindow:{
+
+    },
+    buttonCloseModal:{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    buttonCloseModalText:{
+        color:'#000',
+        fontSize:'20px',
+        fontWeight: 'bold'
+    },
     notificationsCount:{
+        padding:'15px',
         position: 'absolute',
         display:'flex',
         alignItems:'center',
@@ -65,6 +115,7 @@ const stylesMain = StyleSheet.create({
         right:'2px'
     },
     main:{
+        zIndex: 1,
         display: 'flex',
         flexDirection: 'column',
         width: '100%',

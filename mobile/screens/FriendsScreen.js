@@ -36,7 +36,7 @@ const FriendsScreen = ({navigation}) => {
                 </TouchableOpacity>
             </View>
             <AddFriend/>
-            <GetFriends/>
+            <GetFriends isModal={false}/>
         </View>
     );
 }

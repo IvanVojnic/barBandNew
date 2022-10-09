@@ -14,7 +14,7 @@ const Notifications = ({navigation, route}) => {
     }
     console.log(response)
     return(
-        <View><Text>AAA</Text>
+        <View>
             <View>
                 {
                     response.map((item) => (
