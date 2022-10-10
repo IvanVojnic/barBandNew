@@ -2,6 +2,9 @@ import express from 'express';
 import PORT from "./env.js";
 
 
+
+
+
 import sequelize from './utils/database.js';
 
 import router from './routes/routes.js';

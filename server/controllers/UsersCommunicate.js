@@ -2,10 +2,23 @@ import User from '../models/user.js';
 import Friends from '../models/friends.js';
 import sequelize from "../utils/database.js";
 
-export const sendInvite = (req, res, next) => {
+
+export const sendInvite = async (req, res, next) => {
     console.log("_________________________");
     console.log(req.body.friendsList);
-    return res.status(200).json('invite sends');
+    let invReceiver = [];
+
+    for (let i = 0; i < req.body.friendsList.length; i++) {
+
+        invReceiver.push(req.body.friendsList[i]);
+
+    }
+    invReceiver.forEach(function (friend, i, invReceiver) {
+        return res.status(200).json('invite is sent to ' + invReceiver[i])
+    })
+
+
+
 }
 
 export const acceptFriendsRequest = async (req, res, next) => {
@@ -79,3 +92,5 @@ export const sendReq = (req, res, next) => {
          }
      })
 }
+
+
