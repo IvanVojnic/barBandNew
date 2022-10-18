@@ -4,7 +4,10 @@ import sequelize from "../utils/database.js";
 
 export const sendInvite = (req, res, next) => {
     console.log("_________________________");
-    console.log(req.body.friendsList);
+    req.body.friendsList.forEach(function (friend) {
+        console.log(friend)
+        //return res.status(200).json('invite is sent to ' + invReceiver[i])
+    })
     return res.status(200).json('invite sends');
 }
 

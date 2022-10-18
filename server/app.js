@@ -1,14 +1,12 @@
 import express from 'express';
 import PORT from "./env.js";
-
-
 import sequelize from './utils/database.js';
-
 import router from './routes/routes.js';
+import cors from 'cors';
+//import {createConnection} from "./models/modelsConnection.js";
 
 const app = express();
 
-import cors from 'cors';
 const corsOptions ={
     origin:'*',
     credentials:true,            //access-control-allow-credentials:true
@@ -30,8 +28,10 @@ app.use((_, res, next) => {
 
 app.use(router);
 
+
 sequelize.sync({force:false}).then(()=>{
     console.log("Tables have been created");
+   // createConnection(true)
 }).catch(err=>console.log(err));
 
 app.listen(PORT);
