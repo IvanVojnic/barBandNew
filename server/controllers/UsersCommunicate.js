@@ -1,12 +1,28 @@
 import User from '../models/user.js';
 import Friends from '../models/friends.js';
 import sequelize from "../utils/database.js";
+import Rooms from "../models/rooms.js";
+import Invites from "../models/invites.js";
 
-export const sendInvite = (req, res, next) => {
+
+export const sendInvite = async (req, res, next) => {
     console.log("_________________________");
+    const userId = req.body.userSender
     req.body.friendsList.forEach(function (friend) {
         console.log(friend)
-        //return res.status(200).json('invite is sent to ' + invReceiver[i])
+    })
+    const newRoom = await Rooms.create({
+        idUserCreator: userId,
+        date: req.body?.date || ' ',
+        place: req.body?.place || ' '
+    }).then(console.log("room created"))
+    console.log(newRoom.id)
+    req.body.friendsList.forEach(function (friend) {
+        Invites.create({
+            statusId: 2,
+            userId: friend,
+            roomId: newRoom.id
+        }).then(console.log("invite created"))
     })
     return res.status(200).json('invite sends');
 }

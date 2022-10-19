@@ -1,5 +1,6 @@
 import { Sequelize } from 'sequelize';
 import sequelize from '../utils/database.js';
+import Invites from "./invites.js";
 
 const Status = sequelize.define('status', {
     id: {
@@ -9,7 +10,7 @@ const Status = sequelize.define('status', {
         primaryKey: true
     },
     status: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
     }
 });

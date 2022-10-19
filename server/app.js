@@ -3,6 +3,7 @@ import PORT from "./env.js";
 import sequelize from './utils/database.js';
 import router from './routes/routes.js';
 import cors from 'cors';
+import Status from "./models/status.js";
 //import {createConnection} from "./models/modelsConnection.js";
 
 const app = express();
@@ -33,5 +34,15 @@ sequelize.sync({force:false}).then(()=>{
     console.log("Tables have been created");
    // createConnection(true)
 }).catch(err=>console.log(err));
+
+Status.create({
+    status: -1
+}).then(console.log("created -1"))
+Status.create({
+    status: 0
+}).then(console.log("created 0"))
+Status.create({
+    status: 1
+}).then(console.log("created 1"))
 
 app.listen(PORT);

@@ -8,12 +8,9 @@ const Invites = sequelize.define('invites', {
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
-    },
-    idStatus: {
-        type: Sequelize.INTEGER,
-        allowNull: false
     }
 });
-Invites.hasOne(Status, { onDelete: "cascade"})
+Status.hasOne(Invites, { onDelete: "cascade"})
+
 
 export default Invites;

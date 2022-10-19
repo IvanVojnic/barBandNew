@@ -1,10 +1,6 @@
 import React from "react";
 import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
 
-const roomsModel = () => {
-
-}
-
 const Rooms = ({navigation}) => {
 
 
