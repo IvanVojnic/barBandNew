@@ -21,8 +21,4 @@ const Rooms = sequelize.define('rooms', {
         type: Sequelize.STRING
     }
 });
-
-//Rooms.belongsToMany(User, {through: Invites});
-
-
 export default Rooms;

@@ -32,5 +32,7 @@ User.hasMany(Friends, {
 User.hasMany(Rooms, {
    foreignKey: 'idUserCreator'
 });
-//User.belongsToMany(Rooms, {through: Invites});
+
+User.belongsToMany(Rooms, {through: Invites});
+Rooms.belongsToMany(User, {through: Invites});
 export default User;
