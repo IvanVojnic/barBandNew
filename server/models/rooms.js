@@ -8,21 +8,21 @@ const Rooms = sequelize.define('rooms', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
-        primaryKey: true,
+        primaryKey: true
     },
     idUserCreator: {
-        type: Sequelize.STRING,
-        allowNull: false,
+        type: Sequelize.INTEGER,
+        allowNull: false
     },
     date: {
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
     },
     place: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
     }
 });
 
-Rooms.belongsToMany(User, {through: Invites});
+//Rooms.belongsToMany(User, {through: Invites});
 
 
 export default Rooms;

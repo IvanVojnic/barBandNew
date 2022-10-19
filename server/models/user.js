@@ -9,14 +9,14 @@ const User = sequelize.define('users', {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
-      primaryKey: true,
+      primaryKey: true
    },
    email: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: false
    },
    name: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING
    },
    password: {
       type: Sequelize.STRING,
@@ -32,5 +32,5 @@ User.hasMany(Friends, {
 User.hasMany(Rooms, {
    foreignKey: 'idUserCreator'
 });
-User.belongsToMany(Rooms, {through: Invites});
+//User.belongsToMany(Rooms, {through: Invites});
 export default User;

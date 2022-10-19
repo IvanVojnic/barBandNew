@@ -6,11 +6,11 @@ const Status = sequelize.define('status', {
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
-        primaryKey: true,
+        primaryKey: true
     },
     status: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: false
     }
 });
 

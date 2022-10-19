@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
-      <change afterPath="$PROJECT_DIR$/mobile/screens/invitesRoomsScreen.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/invites.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/modelsConnection.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/rooms.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/models/status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/navigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/friendsReceiver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/friendsSender.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/relations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/invites.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/invites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/rooms.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/rooms.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/models/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/status.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +68,9 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect" value="MySQL" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -109,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.web" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.web" />
       </list>
@@ -194,6 +185,17 @@
       <workItem from="1665753992908" duration="4567000" />
       <workItem from="1666076515881" duration="10000" />
       <workItem from="1666120018223" duration="5649000" />
+      <workItem from="1665315395367" duration="6659000" />
+      <workItem from="1665385542250" duration="9000" />
+      <workItem from="1665505067475" duration="2281000" />
+      <workItem from="1665559560143" duration="13000" />
+      <workItem from="1665753992908" duration="4567000" />
+      <workItem from="1666076515881" duration="10000" />
+      <workItem from="1666120018223" duration="5752000" />
+      <workItem from="1666163631648" duration="19000" />
+      <workItem from="1666182253867" duration="1145000" />
+      <workItem from="1665315395367" duration="1666000" />
+      <workItem from="1666198141369" duration="596000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
