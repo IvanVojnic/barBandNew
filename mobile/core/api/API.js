@@ -42,6 +42,42 @@ export const sendInvite = async (userFriendsList) => {
    }
 }
 
+export const acceptInvite = async (roomId) => {
+   const userId = await getId();
+   const token = await getAccessToken();
+   const isAuth = await onLoggedIn(token);
+   let res = await fetch(`${urlAPI}/acceptInvite`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({userId: userId, roomId: roomId})
+   })
+   if (res.ok) {
+      if(isAuth) {
+         return await res.json();
+      }
+   }
+}
+
+export const getRooms = async () => {
+   const userId = await getId();
+   const token = await getAccessToken();
+   const isAuth = await onLoggedIn(token);
+   let res = await fetch(`${urlAPI}/getRooms`, {
+      method: 'POST',
+      headers: {
+         'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({userId: userId})
+   })
+   if (res.ok) {
+      if(isAuth) {
+         return await res.json();
+      }
+   }
+}
+
 export const acceptRequestFriends = async (id) => {
    const userId = await getId();
    const token = await getAccessToken();

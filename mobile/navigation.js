@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet} from "react-native";
-import { AuthScreen, MainScreen, FriendsScreen, Notifications } from './screens';
+import { AuthScreen, MainScreen, FriendsScreen, Notifications, Rooms } from './screens';
 
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
@@ -30,6 +30,11 @@ export default function (){
                     name="NotificationsScreen"
                     component={Notifications}
                     options={{title: 'Notifications'}}
+                />
+                <Stack.Screen
+                    name="RoomsScreen"
+                    component={Rooms}
+                    options={{title: 'Rooms'}}
                 />
             </Stack.Navigator>
         </NavigationContainer>

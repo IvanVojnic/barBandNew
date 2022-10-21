@@ -26,6 +26,10 @@ const Main = ({navigation}) => {
         navigation.navigate('FriendsScreen');
     }
 
+    const buttonRoomsHandler = () => {
+        navigation.navigate('RoomsScreen');
+    }
+
     const buttonNotifications = () => {
         navigation.navigate('NotificationsScreen', {response: notifications});
     }
@@ -67,6 +71,11 @@ const Main = ({navigation}) => {
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>
                     <Text style={stylesMain.buttonFriendsText}>Notifications</Text>
                     {isNotifLoaded && <Text style={stylesMain.notificationsCount}>{notifCount}</Text>}
+                </TouchableOpacity>
+            </View>
+            <View style={stylesMain.butFriendsWrapper}>
+                <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonRoomsHandler}>
+                    <Text style={stylesMain.buttonFriendsText}>Rooms</Text>
                 </TouchableOpacity>
             </View>
 

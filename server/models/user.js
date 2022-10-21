@@ -1,22 +1,22 @@
 import { Sequelize } from 'sequelize';
 import sequelize from '../utils/database.js';
 import Friends from "./friends.js";
-/*import FriendsSender from "./friendsSender.js";
-import FriendsReceiver from "./friendsReceiver.js";*/
+import Rooms from "./rooms.js";
+import Invites from "./invites.js";
 
 const User = sequelize.define('users', {
    id: {
       type: Sequelize.INTEGER,
       autoIncrement: true,
       allowNull: false,
-      primaryKey: true,
+      primaryKey: true
    },
    email: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: false
    },
    name: {
-      type: Sequelize.STRING,
+      type: Sequelize.STRING
    },
    password: {
       type: Sequelize.STRING,
@@ -25,8 +25,14 @@ const User = sequelize.define('users', {
 });
 User.hasMany(Friends, {
    foreignKey: 'userReceiver'
-})
+});
 User.hasMany(Friends, {
    foreignKey: 'userSender'
-})
+});
+User.hasMany(Rooms, {
+   foreignKey: 'idUserCreator'
+});
+
+User.belongsToMany(Rooms, {through: Invites});
+Rooms.belongsToMany(User, {through: Invites});
 export default User;

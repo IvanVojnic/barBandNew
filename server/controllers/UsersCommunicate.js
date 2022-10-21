@@ -1,12 +1,9 @@
 import User from '../models/user.js';
 import Friends from '../models/friends.js';
 import sequelize from "../utils/database.js";
+import Rooms from "../models/rooms.js";
+import Invites from "../models/invites.js";
 
-export const sendInvite = (req, res, next) => {
-    console.log("_________________________");
-    console.log(req.body.friendsList);
-    return res.status(200).json('invite sends');
-}
 
 export const acceptFriendsRequest = async (req, res, next) => {
     const [resultsReceiver, metadata] = await sequelize.query(
@@ -59,7 +56,6 @@ export const findUser = (req,res,next) => {
         }, raw: true, attributes:["email", "id", "name"]}).then(friend => {
         if(friend){
             console.log(friend)
-            console.log("kkk")
             return res.status(200).json(friend);
         }
     })

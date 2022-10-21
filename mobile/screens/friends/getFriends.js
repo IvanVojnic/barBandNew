@@ -56,7 +56,7 @@ const GetFriends = (isModal) => {
         e.preventDefault();
 
         sendInvite(friendsCheckedList).then((response) => {
-            console.log(response)
+            console.log(response);
         })
     }
 

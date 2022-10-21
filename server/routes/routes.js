@@ -8,10 +8,13 @@ import {
     sendReq,
     sendFriendsRequest,
     acceptFriendsRequest,
-    sendInvite
 } from '../controllers/UsersCommunicate.js';
 
-//import {testReq} from "../controllers/UsersCommunicate.js";
+import {
+    sendInvite,
+    getRooms,
+    acceptInvite
+} from "../controllers/UserInvitesCommunicate.js";
 
 const router = express.Router();
 
@@ -38,6 +41,10 @@ router.post('/findFriend',findUser);
 router.post('/sendRequest' , sendReq);
 
 router.post('/sendInvite' , sendInvite);
+
+router.post('/getRooms' , getRooms);
+
+router.post('/acceptInvite' , acceptInvite);
 
 // will match any other path
 router.use('/', (req, res, next) => {
