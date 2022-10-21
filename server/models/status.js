@@ -15,4 +15,10 @@ const Status = sequelize.define('status', {
     }
 });
 
+export const statusAmount = async () => {
+    console.log("+++++++++++++++++++++++++")
+    console.log(await Status.count({}))
+    return  await Status.count({});
+}
+
 export default Status;

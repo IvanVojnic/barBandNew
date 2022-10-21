@@ -2,13 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/invitesRoomsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/invites.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/invites.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/models/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +79,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -96,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.web" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.web" />
@@ -175,24 +185,12 @@
       <workItem from="1665070025306" duration="1786000" />
       <workItem from="1665079888915" duration="4042000" />
       <workItem from="1665130766568" duration="16000" />
-      <workItem from="1665315395367" duration="6659000" />
-      <workItem from="1665385542250" duration="9000" />
-      <workItem from="1665505067475" duration="2281000" />
-      <workItem from="1665559560143" duration="13000" />
-      <workItem from="1665753992908" duration="4567000" />
-      <workItem from="1666076515881" duration="10000" />
-      <workItem from="1666120018223" duration="5649000" />
-      <workItem from="1665315395367" duration="6659000" />
-      <workItem from="1665385542250" duration="9000" />
-      <workItem from="1665505067475" duration="2281000" />
-      <workItem from="1665559560143" duration="13000" />
-      <workItem from="1665753992908" duration="4567000" />
-      <workItem from="1666076515881" duration="10000" />
-      <workItem from="1666120018223" duration="5752000" />
-      <workItem from="1666163631648" duration="19000" />
-      <workItem from="1666182253867" duration="1145000" />
       <workItem from="1665315395367" duration="1666000" />
-      <workItem from="1666198141369" duration="5198000" />
+      <workItem from="1666198141369" duration="5672000" />
+      <workItem from="1666263920015" duration="95000" />
+      <workItem from="1666288234313" duration="2610000" />
+      <workItem from="1666336118061" duration="47000" />
+      <workItem from="1666353843556" duration="6174000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

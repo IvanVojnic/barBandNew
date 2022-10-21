@@ -5,28 +5,6 @@ import Rooms from "../models/rooms.js";
 import Invites from "../models/invites.js";
 
 
-export const sendInvite = async (req, res, next) => {
-    console.log("_________________________");
-    const userId = req.body.userSender
-    req.body.friendsList.forEach(function (friend) {
-        console.log(friend)
-    })
-    const newRoom = await Rooms.create({
-        idUserCreator: userId,
-        date: req.body?.date || ' ',
-        place: req.body?.place || ' '
-    }).then(console.log("room created"))
-    console.log(newRoom.id)
-    req.body.friendsList.forEach(function (friend) {
-        Invites.create({
-            statusId: 2,
-            userId: friend,
-            roomId: newRoom.id
-        }).then(console.log("invite created"))
-    })
-    return res.status(200).json('invite sends');
-}
-
 export const acceptFriendsRequest = async (req, res, next) => {
     const [resultsReceiver, metadata] = await sequelize.query(
         `UPDATE friends SET status = 'friends' WHERE userSender = ${req.body.userSender} AND userReceiver = ${req.body.userReceiver}`
@@ -78,7 +56,6 @@ export const findUser = (req,res,next) => {
         }, raw: true, attributes:["email", "id", "name"]}).then(friend => {
         if(friend){
             console.log(friend)
-            console.log("kkk")
             return res.status(200).json(friend);
         }
     })
