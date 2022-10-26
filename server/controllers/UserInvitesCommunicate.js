@@ -9,16 +9,60 @@ export const acceptInvite = async (req, res, next) => {
 }
 
 export const getRooms = async (req, res, next) => {
-    const userId = req.body.userId
-    await Rooms.findAll({
+    const myRooms = [];
+    let userRooms = null;
+    let userInvites = null;
+    const userId = req.body.userId;
+    console.log("====================================");
+    Rooms.findAll({
         where: {
             idUserCreator: userId
         }, raw: true, attributes:["idUserCreator", "id", "date", "place"]
     }).then(rooms => {
-        console.log(rooms)
-        return res.status(200).json(rooms);
-
+        userRooms = rooms;
     })
+
+    let invites = await Invites.findAll({
+        where: {
+            userId: userId
+        }, raw: true, attributes:["id", "statusId", "userId", "roomId"]
+    }).then(invites => {
+        userInvites = invites;
+    })
+
+    userRooms.forEach(room => {
+        myRooms.push({
+            statusId: Number(2),
+            userId: Number(userId),
+            roomId: Number(room.id)
+        })
+    })
+    userInvites.forEach(invite => {
+        myRooms.push({
+            statusId: Number(invite.statusId),
+            userId: Number(invite.userId),
+            roomId: Number(invite.roomId)
+        })
+    })
+    myRooms.forEach(room  => {
+        Rooms.findOne({where: {id: room.roomId}})
+            .then(room=>{
+                if(!room) return;
+                console.log("_____________");
+                console.log(room.dataValues);
+                console.log("_____________");
+                room.getUsers().then(users=>{
+                    for(user of users){
+                        console.log("course:", user.name);
+                    }
+                });
+            });
+    })
+
+   /* const [resultsReceiver, metadata] = await sequelize.query(
+        `SELECT * FROM rooms WHERE rooms.id LEFT JOIN invites ON rooms.id = invites.roomId`
+    );
+    console.log(resultsReceiver)*/
 }
 
 export const sendInvite = async (req, res, next) => {
