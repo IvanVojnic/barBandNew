@@ -22,6 +22,10 @@ const User = sequelize.define('users', {
       type: Sequelize.STRING,
       allowNull: false,
    },
+   pushToken: {
+      type: Sequelize.STRING,
+      allowNull: true,
+   }
 });
 User.hasMany(Friends, {
    foreignKey: 'userReceiver'
