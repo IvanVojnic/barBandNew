@@ -26,8 +26,8 @@ const getId = async () => {
 
 export const sendInvite = async (userFriendsList) => {
    const userId = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true;
    let res = await fetch(`${urlAPI}/sendInvite`, {
       method: 'POST',
       headers: {
@@ -44,8 +44,8 @@ export const sendInvite = async (userFriendsList) => {
 
 export const acceptRequestFriends = async (id) => {
    const userId = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true;
    console.log(id);
    let res = await fetch(`${urlAPI}/acceptFriendsRequest`, {
       method: 'POST',
@@ -98,8 +98,8 @@ export const getFriends = async () => {
 
 export const sendRequest = async (userReceiverID) => {
    const userSenderID = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true;
    let res = await fetch(`${urlAPI}/sendRequest`, {
       method: 'POST',
       headers: {
@@ -115,8 +115,8 @@ export const sendRequest = async (userReceiverID) => {
 }
 
 export const findFriends = async (emailUser) => {
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true;
    let res = await fetch(`${urlAPI}/findFriend`, {
       method: 'POST',
       headers: {
@@ -132,7 +132,7 @@ export const findFriends = async (emailUser) => {
 }
 
 export const onLoggedIn = async (token) => {
-   let response = await fetch(`${urlAPI}/private`, {
+   let response = await fetch(`${urlAPI}/auth/private`, {
       method: 'GET',
       headers: {
          'Content-Type': 'application/json;charset=utf-8',

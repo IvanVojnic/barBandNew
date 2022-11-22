@@ -43,7 +43,7 @@ const AuthScreen = ({navigation}) => {
             name,
             password,
         };
-        fetch(`${API_URL}/${isLogin ? 'login' : 'signup'}`, {
+        fetch(`${API_URL}/${isLogin ? 'auth/login' : 'auth/signup'}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -62,6 +62,7 @@ const AuthScreen = ({navigation}) => {
                     await storeId(jsonRes.id)
                     await storeAccessToken(jsonRes.token)
                     setMessage(jsonRes.message);
+                    console.log(isLogin)
                     if(isLogin){
                         navigation.navigate('MainScreen');
                     }
