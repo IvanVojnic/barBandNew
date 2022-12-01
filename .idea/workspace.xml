@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
+      <change afterPath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +29,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="devV" />
+        <entry key="$PROJECT_DIR$" value="dataBaseInvites" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,16 +64,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/MyPC/WebstormProjects/barBandNew",
-    "nodejs_package_manager_path": "yarn",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MyPC/WebstormProjects/barBandNew&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\проекты летом 2022\work2\barband\mobile" />
@@ -182,6 +181,10 @@
       <workItem from="1668721779797" duration="43000" />
       <workItem from="1669055240455" duration="49000" />
       <workItem from="1669142583189" duration="3564000" />
+      <workItem from="1669364147919" duration="600000" />
+      <workItem from="1669626789670" duration="69000" />
+      <workItem from="1669747199644" duration="4205000" />
+      <workItem from="1669826688080" duration="4754000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

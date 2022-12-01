@@ -20,6 +20,8 @@ const GetFriends = (isModal) => {
                 setMessage("You don't have friends")
             } else if (response === 0) {
                 setMessage("Error")
+            } else if (response === null) {
+                setMessage("Error")
             } else {
                 setFriends(response)
             }
