@@ -51,8 +51,6 @@ const login = (req, res, next) => {
         if (!dbUser) {
             return res.status(404).json({message: "user not found"});
         } else {
-            // password hash
-            console.log(dbUser.dataValues.id)
             bcrypt.compare(req.body.password, dbUser.password, (err, compareRes) => {
                 if (err) { // error while comparing
                     res.status(502).json({message: "error while checking user password"});

@@ -17,6 +17,7 @@ const Rooms = ({navigation}) => {
         })
     }, [])
 
+
     const inviteSubmit = (roomId) => {
         acceptInvite().then((response) => {
             console.log(response)
@@ -33,10 +34,9 @@ const Rooms = ({navigation}) => {
                         {
                             rooms.map((room) => (
                                 <View>
-                                    <div></div>
-                                    <form onSubmit={inviteSubmit(room.id)}>
-
-                                    </form>
+                                    <View>{room.date}</View>
+                                    <View>{room.place}</View>
+                                    <View>{room.idUserCreator}</View>
                                 </View>
                             ))
                         }

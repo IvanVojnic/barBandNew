@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.s" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UsersCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/status.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="devV" />
+        <entry key="$PROJECT_DIR$" value="cpGo" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />

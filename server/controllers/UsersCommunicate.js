@@ -28,7 +28,6 @@ export const sendFriends = async (req, res, next) => {
     for(let i = 0; i < resultsSender.length; i++){
         resultsReceiver.push(resultsSender[i])
     }
-    console.log(JSON.stringify(resultsReceiver));
     return res.status(200).json(resultsReceiver);
 }
 
@@ -46,7 +45,6 @@ export const sendFriendsRequest = async (req, res, next) => {
     for(let i = 0; i < resultsSender.length; i++){
         resultsReceiver.push(resultsSender[i])
     }
-    console.log(JSON.stringify(resultsReceiver));
     return res.status(200).json(resultsReceiver);
 }
 
@@ -55,7 +53,6 @@ export const findUser = (req,res,next) => {
             email: req.body.email
         }, raw: true, attributes:["email", "id", "name"]}).then(friend => {
         if(friend){
-            console.log(friend)
             return res.status(200).json(friend);
         }
     })
@@ -64,7 +61,6 @@ export const findUser = (req,res,next) => {
 export const sendReq = (req, res, next) => {
      let userSender = req.body.userSender;
      let userReceiver = req.body.userReceiver;
-     console.log("response sent")
      Friends.create({
          userSender : userSender,
          userReceiver : userReceiver,
