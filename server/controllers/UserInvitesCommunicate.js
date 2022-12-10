@@ -4,8 +4,13 @@ import sequelize from "../utils/database.js";
 import Rooms from "../models/rooms.js";
 import Invites from "../models/invites.js";
 
-export const acceptInvite = async (req, res, next) => {
-
+export const respToInvite = async (req, res, next) => {
+    const userId = req.body.userId
+    const roomId = req.body.roomId
+    const status = req.body.status
+    const [invite, metadata1] = await sequelize.query(
+        `SELECT ROOMS.id, ROOMS.idUserCreator, ROOMS.date, ROOMS.place, USERS.name, USERS.email FROM ROOMS INNER JOIN USERS on USERS.id = ${userId} WHERE ROOMS.idUserCreator = ${userId}`
+    );
 }
 
 export const getRooms = async (req, res, next) => {
@@ -57,9 +62,13 @@ export const sendInvite = async (req, res, next) => {
         .catch((e) => {
             console.log(e)
         })
+    const [statusId, metadataU3] = await sequelize.query(
+        'SELECT id FROM STATUSES WHERE status = 0'
+    )
+    console.log(statusId)
     req.body.friendsList.forEach(function (friend) {
         Invites.create({
-            statusId: Number(2),
+            statusId: Number(statusId[0].id),
             userId: Number(friend),
             roomId: Number(newRoom.id)
         })
