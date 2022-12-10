@@ -8,9 +8,11 @@ const Rooms = ({navigation}) => {
     const [isRoomsLoaded, setIsRoomsLoaded] = useState(false);
 
     useEffect(() => {
-        getRooms().then((response) => {
+        getRooms().then(async (response) => {
             console.log(response)
-            setRooms(response)
+            await setRooms(response.rooms)
+            console.log(rooms)
+            console.log(typeof rooms)
             setIsRoomsLoaded(true)
         }).catch((e) => {
             console.log(e)
@@ -18,7 +20,7 @@ const Rooms = ({navigation}) => {
     }, [])
 
 
-    const inviteSubmit = (roomId) => {
+    const InviteSubmit = (roomId) => {
         acceptInvite().then((response) => {
             console.log(response)
         }).catch((e) => {
@@ -30,17 +32,30 @@ const Rooms = ({navigation}) => {
         <View>
             <View>
                 {
-                    isRoomsLoaded ? <View>
+                    isRoomsLoaded && <View>
                         {
                             rooms.map((room) => (
-                                <View>
-                                    <View>{room.date}</View>
-                                    <View>{room.place}</View>
-                                    <View>{room.idUserCreator}</View>
-                                </View>
+                                <form onSubmit={InviteSubmit}>
+                                    <View>Место:{room.room.place}</View>
+                                    <View>Время:{room.room.date}</View>
+                                    <View>Имя создателя комнаты:{room.room.name}</View>
+                                    <View>Почта создателя комнаты:{room.room.email}</View>
+                                    <View>
+                                        <View>Приглашенные пользователи:</View>
+                                        {
+                                            room.users.map((user) => (
+                                                <View>
+                                                    <View>Имя:{user.name}</View>
+                                                    <View>Почта:{user.email}</View>
+                                                </View>
+                                            ))
+                                        }
+                                    </View>
+                                    <input type="submit" value="Add Friend"/>
+                                </form>
                             ))
                         }
-                    </View> : <View></View>
+                    </View>
                 }
             </View>
         </View>

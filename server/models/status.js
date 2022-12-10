@@ -2,7 +2,7 @@ import { Sequelize } from 'sequelize';
 import sequelize from '../utils/database.js';
 import Invites from "./invites.js";
 
-const Status = sequelize.define('status', {
+const Status = sequelize.define('statuses', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,

@@ -25,7 +25,7 @@ export const getRooms = async (req, res, next) => {
     console.log("_____2______")
 
     const [rooms2, metadata2] = await sequelize.query(
-        `SELECT ROOMS.id, ROOMS.idUserCreator, ROOMS.date, ROOMS.place, USERS.name, USERS.email FROM ROOMS INNER JOIN INVITES on INVITES.roomId = ROOMS.id WHERE INVITES.userId = ${userId} INNER JOIN USERS on USERS.id = ROOMS.idUserCreator`
+        `SELECT ROOMS.id, ROOMS.idUserCreator, ROOMS.date, ROOMS.place, USERS.name, USERS.email FROM ROOMS INNER JOIN INVITES on INVITES.roomId = ROOMS.id AND INVITES.userId = ${userId} INNER JOIN USERS on USERS.id=ROOMS.idUserCreator`
     );
     console.log("_____3______")
 
@@ -40,9 +40,8 @@ export const getRooms = async (req, res, next) => {
         )
         result.rooms.push({"room": rooms2[i], users: users1})
     }
+    result.rooms.splice(0,1)
 
-    console.log(JSON.stringify("_________rooms2__________"));
-    console.log(JSON.stringify(rooms2));
     console.log(JSON.stringify("_________result__________"));
     console.log(JSON.stringify(result));
     return res.status(200).json(result);
