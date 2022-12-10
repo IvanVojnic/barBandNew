@@ -30,10 +30,7 @@ export const getRooms = async (req, res, next) => {
     console.log("_____2______")
 
     const [rooms2, metadata2] = await sequelize.query(
-        `SELECT ROOMS.id, ROOMS.idUserCreator, ROOMS.date, ROOMS.place, USERS.name, USERS.email, STATUSES.status FROM ROOMS 
-             INNER JOIN INVITES on INVITES.roomId = ROOMS.id AND INVITES.userId = ${userId} 
-             INNER JOIN USERS on USERS.id = ROOMS.idUserCreator 
-             INNER JOIN statuses on STATUSES.id = INVITES.statusId`
+        `SELECT ROOMS.id, ROOMS.idUserCreator, ROOMS.date, ROOMS.place, USERS.name, USERS.email, STATUSES.status FROM ROOMS INNER JOIN INVITES on INVITES.roomId = ROOMS.id AND INVITES.userId = ${userId} INNER JOIN USERS on USERS.id = ROOMS.idUserCreator INNER JOIN statuses on STATUSES.id = INVITES.statusId`
     );
     console.log("_____3______")
 
@@ -44,7 +41,7 @@ export const getRooms = async (req, res, next) => {
 
     for(let i = 0; i < rooms2.length; i++){
         const [users1, metadataU1] = await sequelize.query(
-            `SELECT USERS.name, USERS.email, INVITES.statusId FROM USERS INNER JOIN INVITES on INVITES.userId = USERS.Id WHERE INVITES.roomId = ${rooms2[i].id}`
+            `SELECT USERS.name, USERS.email, INVITES.statusId FROM USERS INNER JOIN INVITES on INVITES.userId = USERS.Id WHERE INVITES.roomId = ${rooms2[i].id} INNER JOIN statuses on STATUSES.id = INVITES.statusId`
         )
         result.rooms.push({"room": rooms2[i], users: users1})
     }

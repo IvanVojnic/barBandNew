@@ -6,6 +6,7 @@ const Rooms = ({navigation}) => {
 
     const [rooms, setRooms] = useState([]);
     const [isRoomsLoaded, setIsRoomsLoaded] = useState(false);
+    const [statusAccepted, setStatusAccepted] = useState(false);
 
     useEffect(() => {
         getRooms().then(async (response) => {
@@ -20,12 +21,14 @@ const Rooms = ({navigation}) => {
     }, [])
 
 
-    const InviteSubmit = (roomId) => {
-        acceptInvite().then((response) => {
+    const InviteSubmit = (roomId, status) => {
+        console.log(roomId);
+        console.log(status);
+        /*acceptInvite().then((response) => {
             console.log(response)
         }).catch((e) => {
             console.log(e)
-        })
+        })*/
     }
 
     return(
@@ -35,7 +38,7 @@ const Rooms = ({navigation}) => {
                     isRoomsLoaded && <View>
                         {
                             rooms.map((room) => (
-                                <form onSubmit={InviteSubmit}>
+                                <View>
                                     <View>Место:{room.room.place}</View>
                                     <View>Время:{room.room.date}</View>
                                     <View>Имя создателя комнаты:{room.room.name}</View>
@@ -51,8 +54,9 @@ const Rooms = ({navigation}) => {
                                             ))
                                         }
                                     </View>
-                                    <input type="submit" value="Add Friend"/>
-                                </form>
+                                    <Button title={"Yes"} onPress={() => {InviteSubmit(room.room.id, 1)}}/>
+                                    <Button title={"No"} onPress={() => {InviteSubmit(room.room.id, -1)}}/>
+                                </View>
                             ))
                         }
                     </View>
