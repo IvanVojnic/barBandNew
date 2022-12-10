@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/status.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

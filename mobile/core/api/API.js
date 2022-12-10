@@ -42,7 +42,7 @@ export const sendInvite = async (userFriendsList) => {
    }
 }
 
-export const acceptInvite = async (roomId) => {
+export const acceptInvite = async (roomId, status) => {
    const userId = await getId();
    const token = await getAccessToken();
    const isAuth = await onLoggedIn(token);
@@ -51,7 +51,7 @@ export const acceptInvite = async (roomId) => {
       headers: {
          'Content-Type': 'application/json;charset=utf-8',
       },
-      body: JSON.stringify({userId: userId, roomId: roomId})
+      body: JSON.stringify({userId: userId, roomId: roomId, status: status})
    })
    if (res.ok) {
       if(isAuth) {
