@@ -60,7 +60,7 @@ const login = (req, res, next) => {
                 } else { // password doesnt match
                     res.status(401).json({message: "invalid credentials"});
                 };
-            });
+            })
         };
 
     })

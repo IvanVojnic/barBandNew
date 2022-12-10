@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import {StyleSheet} from "react-native";
+import { SafeAreaView } from 'react-native';
 import { AuthScreen, MainScreen, FriendsScreen, Notifications, Rooms } from './screens';
 
 import {createStackNavigator} from '@react-navigation/stack';

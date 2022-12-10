@@ -3,16 +3,19 @@ import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, P
 import {onLoggedIn} from '../core/api/API'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import PORT from "../env.js";
+import { SafeAreaView } from 'react-native';
 
-const API_URL = Platform.OS === 'ios' ? `http://localhost:${PORT}` : `http://localhost:${PORT}`;
 
-const storeAccessToken = async (value) => {
+
+const API_URL = Platform.OS === 'ios' ? `http://192.168.0.103:${PORT}` : `http://192.168.0.103:${PORT}`;
+
+/*const storeAccessToken = async (value) => {
     try {
         await AsyncStorage.setItem('accessToken', value)
     } catch (e) {
         console.log(e)
     }
-}
+}*/
 
 const storeId = async (value) => {
     try {
@@ -47,6 +50,7 @@ const AuthScreen = ({navigation}) => {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': 'Bearer ${token}',
             },
             body: JSON.stringify(payload),
         })
@@ -57,10 +61,10 @@ const AuthScreen = ({navigation}) => {
                     setIsError(true);
                     setMessage(jsonRes.message);
                 } else {
-                    await onLoggedIn(jsonRes.token);
+                    //await onLoggedIn(jsonRes.token);
                     setIsError(false);
                     await storeId(jsonRes.id)
-                    await storeAccessToken(jsonRes.token)
+                    //await storeAccessToken(jsonRes.token)
                     setMessage(jsonRes.message);
                     if(isLogin){
                         navigation.navigate('MainScreen');

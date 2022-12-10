@@ -1,8 +1,8 @@
 import PORT from '../../env.js'
-const urlAPI = `http://localhost:${PORT}`
+const urlAPI = `http://192.168.0.103:${PORT}`
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const getAccessToken = async () => {
+/*const getAccessToken = async () => {
    try {
       const value = await AsyncStorage.getItem('accessToken');
       if(value !== null) {
@@ -11,7 +11,7 @@ const getAccessToken = async () => {
    } catch(e) {
       console.log(e);
    }
-}
+}*/
 
 const getId = async () => {
    try {
@@ -26,8 +26,8 @@ const getId = async () => {
 
 export const sendInvite = async (userFriendsList) => {
    const userId = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true//await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/sendInvite`, {
       method: 'POST',
       headers: {
@@ -44,8 +44,8 @@ export const sendInvite = async (userFriendsList) => {
 
 export const acceptInvite = async (roomId) => {
    const userId = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true//await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/acceptInvite`, {
       method: 'POST',
       headers: {
@@ -62,8 +62,8 @@ export const acceptInvite = async (roomId) => {
 
 export const getRooms = async () => {
    const userId = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true//await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/getRooms`, {
       method: 'POST',
       headers: {
@@ -80,8 +80,8 @@ export const getRooms = async () => {
 
 export const acceptRequestFriends = async (id) => {
    const userId = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true//await onLoggedIn(token);
    console.log(id);
    let res = await fetch(`${urlAPI}/acceptFriendsRequest`, {
       method: 'POST',
@@ -134,8 +134,8 @@ export const getFriends = async () => {
 
 export const sendRequest = async (userReceiverID) => {
    const userSenderID = await getId();
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true//await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/sendRequest`, {
       method: 'POST',
       headers: {
@@ -151,8 +151,8 @@ export const sendRequest = async (userReceiverID) => {
 }
 
 export const findFriends = async (emailUser) => {
-   const token = await getAccessToken();
-   const isAuth = await onLoggedIn(token);
+   //const token = await getAccessToken();
+   const isAuth = true//await onLoggedIn(token);
    let res = await fetch(`${urlAPI}/findFriend`, {
       method: 'POST',
       headers: {
