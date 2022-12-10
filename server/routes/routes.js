@@ -13,7 +13,7 @@ import {
 import {
     sendInvite,
     getRooms,
-    acceptInvite
+    respToInvite
 } from "../controllers/UserInvitesCommunicate.js";
 
 const router = express.Router();
@@ -44,7 +44,7 @@ router.post('/sendInvite' , sendInvite);
 
 router.post('/getRooms' , getRooms);
 
-router.post('/acceptInvite' , acceptInvite);
+router.post('/respToInvite' , respToInvite);
 
 // will match any other path
 router.use('/', (req, res, next) => {
