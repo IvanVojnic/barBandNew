@@ -1,14 +1,14 @@
 import express from 'express';
 import PORT from "./env.js";
-
-
 import sequelize from './utils/database.js';
-
 import router from './routes/routes.js';
+import cors from 'cors';
+import {statusAmount} from "./models/status.js";
+import Status from "./models/status.js";
+//import {createConnection} from "./models/modelsConnection.js";
 
 const app = express();
 
-import cors from 'cors';
 const corsOptions ={
     origin:'*',
     credentials:true,            //access-control-allow-credentials:true
@@ -30,8 +30,27 @@ app.use((_, res, next) => {
 
 app.use(router);
 
+
 sequelize.sync({force:false}).then(()=>{
     console.log("Tables have been created");
+   // createConnection(true)
 }).catch(err=>console.log(err));
+
+async function addStatuses () {
+    const amount = await statusAmount();
+    if(amount < 3){
+        console.log("________________________________________")
+        Status.create({
+            status: -1
+        }).then(console.log("created -1"))
+        Status.create({
+            status: 0
+        }).then(console.log("created 0"))
+        Status.create({
+            status: 1
+        }).then(console.log("created 1"))
+    }
+}
+addStatuses()
 
 app.listen(PORT);
