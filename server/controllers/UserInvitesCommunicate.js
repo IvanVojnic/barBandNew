@@ -4,14 +4,22 @@ import sequelize from "../utils/database.js";
 import Rooms from "../models/rooms.js";
 import Invites from "../models/invites.js";
 
-export const respToInvite = async (req, res, next) => {
+export const acceptInvite = async (req, res, next) => {
     const userId = req.body.userId
     const roomId = req.body.roomId
     const status = req.body.status
-    const [invite, metadata1] = await sequelize.query(
-        `SELECT ROOMS.id, ROOMS.idUserCreator, ROOMS.date, ROOMS.place, USERS.name, USERS.email FROM ROOMS INNER JOIN USERS on USERS.id = ${userId} WHERE ROOMS.idUserCreator = ${userId}`
+    const [statusId, metadata2] = await sequelize.query(
+        `SELECT id FROM STATUSES WHERE STATUSES.status = ${status}`
     );
+    console.log(statusId)
+    console.log(status)
+    console.log(roomId)
+    const [invite, metadata1] = await sequelize.query(
+        `UPDATE INVITES SET INVITES.statusId = ${statusId[0].id} WHERE INVITES.userId = ${userId} AND INVITES.roomId = ${roomId}`
+    );
+    return res.status(200).json('invite submit sent');
 }
+
 
 export const getRooms = async (req, res, next) => {
     let result = {
@@ -38,10 +46,11 @@ export const getRooms = async (req, res, next) => {
         rooms2.push(rooms1[i])
     }
     console.log("_____4______")
+    console.log(rooms2)
 
     for(let i = 0; i < rooms2.length; i++){
         const [users1, metadataU1] = await sequelize.query(
-            `SELECT USERS.name, USERS.email, INVITES.statusId FROM USERS INNER JOIN INVITES on INVITES.userId = USERS.Id WHERE INVITES.roomId = ${rooms2[i].id} INNER JOIN statuses on STATUSES.id = INVITES.statusId`
+            `SELECT USERS.name, USERS.email, INVITES.statusId FROM USERS INNER JOIN INVITES on INVITES.userId = USERS.Id WHERE INVITES.roomId = ${rooms2[i].id}`
         )
         result.rooms.push({"room": rooms2[i], users: users1})
     }
