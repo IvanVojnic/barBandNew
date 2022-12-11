@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, Platform, Image } from 'react-native';
 import {onLoggedIn} from '../core/api/API'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import PORT from "../env.js";
+import {getId, getAccessToken} from "../core/api/API";
 
 const API_URL = Platform.OS === 'ios' ? `http://localhost:${PORT}` : `http://localhost:${PORT}`;
 
@@ -37,6 +38,22 @@ const AuthScreen = ({navigation}) => {
         setMessage('');
     };
 
+    useEffect(async () => {
+        const token = await getAccessToken();
+        onLoggedIn(token).then(async responseAuth => {
+            if (responseAuth){
+                setIsError(false);
+                setMessage(responseAuth.message);
+                if(isLogin){
+                    navigation.navigate('MainScreen');
+                }
+            } else {
+                setMessage(responseAuth.message);
+                setIsError(true);
+            }
+        })
+    },[])
+
     const onSubmitHandler = () => {
         const payload = {
             email,
@@ -57,14 +74,20 @@ const AuthScreen = ({navigation}) => {
                     setIsError(true);
                     setMessage(jsonRes.message);
                 } else {
-                    await onLoggedIn(jsonRes.token);
-                    setIsError(false);
-                    await storeId(jsonRes.id)
-                    await storeAccessToken(jsonRes.token)
-                    setMessage(jsonRes.message);
-                    if(isLogin){
-                        navigation.navigate('MainScreen');
-                    }
+                    await onLoggedIn(jsonRes.token).then(async responseAuth => {
+                        if (responseAuth){
+                            setIsError(false);
+                            await storeId(jsonRes.id)
+                            await storeAccessToken(jsonRes.token)
+                            setMessage(jsonRes.message);
+                            if(isLogin){
+                                navigation.navigate('MainScreen');
+                            }
+                        } else {
+                            setMessage(jsonRes.message);
+                            setIsError(true);
+                        }
+                    })
                 }
             } catch (err) {
                 console.log(err);

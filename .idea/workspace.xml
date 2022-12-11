@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="add NotificationsScreen add button to notifications Screen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/mobile/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/UserInvitesCommunicate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/env.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/env.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
-
+      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,6 +67,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2021.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -96,6 +93,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.web" />
+        <item itemvalue="npm.web" />
         <item itemvalue="npm.web" />
         <item itemvalue="npm.web" />
       </list>
@@ -175,6 +174,11 @@
       <workItem from="1665079888915" duration="4042000" />
       <workItem from="1665130766568" duration="16000" />
       <workItem from="1665315395367" duration="1666000" />
+      <workItem from="1666198141369" duration="5672000" />
+      <workItem from="1666263920015" duration="95000" />
+      <workItem from="1666288234313" duration="2610000" />
+      <workItem from="1666336118061" duration="47000" />
+      <workItem from="1666353843556" duration="6174000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

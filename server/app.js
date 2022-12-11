@@ -52,5 +52,4 @@ async function addStatuses () {
     }
 }
 addStatuses()
-
 app.listen(PORT);

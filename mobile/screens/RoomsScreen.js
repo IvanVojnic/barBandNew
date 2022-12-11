@@ -24,11 +24,11 @@ const Rooms = ({navigation}) => {
     const InviteSubmit = (roomId, status) => {
         console.log(roomId);
         console.log(status);
-        /*acceptInvite().then((response) => {
-            console.log(response)
+        acceptInvite(roomId, status).then((response) => {
+            alert(response)
         }).catch((e) => {
             console.log(e)
-        })*/
+        })
     }
 
     return(
