@@ -2,7 +2,7 @@ import PORT from '../../env.js'
 const urlAPI = `http://localhost:${PORT}`
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const getAccessToken = async () => {
+export const getAccessToken = async () => {
    try {
       const value = await AsyncStorage.getItem('accessToken');
       if(value !== null) {
@@ -13,7 +13,7 @@ const getAccessToken = async () => {
    }
 }
 
-const getId = async () => {
+export const getId = async () => {
    try {
       const value = await AsyncStorage.getItem('userId');
       if(value !== null) {
