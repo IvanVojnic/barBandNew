@@ -128,20 +128,25 @@ export const getFriends = async () => {
    const userId = await getId();
    console.log("get f req 1 user id")
    console.log(userId)
-   let response = await fetch(`${urlAPI}/getFriends`, {
-      method: 'POST',
-      headers: {
-         'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify({id: userId})
-   });
-   console.log("get f response")
-   console.log(response)
-   if (response.ok) {
-      return await response.json();
-   } else {
-      console.log(response);
-      return 0;
+   try {
+      console.log("get friends api call")
+      let response = await fetch(`${urlAPI}/getFriends`, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+         },
+         body: JSON.stringify({id: userId})
+      });
+      console.log("get f response")
+      console.log(response)
+      if (response.ok) {
+         return await response.json();
+      } else {
+         console.log(response);
+         return 0;
+      }
+   } catch(error) {
+      console.log("get friends api error" + error)
    }
 }
 
@@ -181,7 +186,7 @@ export const findFriends = async (emailUser) => {
 }
 
 export const onLoggedIn = async (token) => {
-   console.log("log0")
+   console.log("onLoggedin func called")
    let response = await fetch(`${urlAPI}/private`, {
       method: 'POST',
       headers: {
@@ -190,22 +195,19 @@ export const onLoggedIn = async (token) => {
       },
       body: JSON.stringify({verify:"true"})
    })
-   console.log("log1")
    try {
-      console.log("log2")
       if (response.ok) {
-         console.log("log3")
+         console.log("onLoggedIn response ok, status 200")
          return response
          /*const result = await response.json()
          console.log("onLogged response");
          console.log(result);
          return result;*/
       } else {
-         console.log("else");
+         console.log("onLoggedIn response NOT ok, look at status")
          return false;
       }
    } catch (err) {
-      console.log("log4")
       console.log("onLoggedErr");
       console.log(err);
       return false;

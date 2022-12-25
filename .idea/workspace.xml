@@ -5,15 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/FriendsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/FriendsScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mobile/screens/MainScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/MainScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/RoomsScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/addFriend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/friends/getFriends.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/status.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/status.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +202,7 @@
       <workItem from="1670847662948" duration="810000" />
       <workItem from="1670871745181" duration="7296000" />
       <workItem from="1670959149091" duration="9000" />
-      <workItem from="1671881129584" duration="17797000" />
+      <workItem from="1671881129584" duration="19307000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>
@@ -274,12 +266,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/mobile/screens/AuthScreen.js</url>
-          <line>89</line>
+          <line>79</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/mobile/screens/AuthScreen.js</url>
-          <line>103</line>
+          <line>93</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

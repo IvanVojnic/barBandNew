@@ -50,24 +50,16 @@ const AuthScreen = ({navigation}) => {
     };
 
     useEffect( () => {
-
         const loadData = async (token) => {
-          //  const token = "o"//await getAccessToken();
-            console.log(token)
-            console.log("___1___")
             let responseAuth = await onLoggedIn(token)//.then(async responseAuth => {
             console.log(responseAuth)
-            console.log("___2___")
             if (responseAuth){
-                console.log("___3___")
                 setIsError(false);
                 setMessage("hi");
-                console.log("___4___")
                 if(isLogin){
-                    console.log("___5___")
+                    console.log("navigate without login")
                     navigation.navigate('MainScreen');
                 }
-
             } else {
                 console.log("error in token")
                 await removeItemValue('accessToken')
@@ -77,8 +69,6 @@ const AuthScreen = ({navigation}) => {
         }
         const getToken = async () => {
             const token = await getAccessToken();
-            console.log("Token up line")
-            console.log(token)
             if (token != null && token != undefined && token != "") {
                 await loadData(token)
             }
@@ -107,25 +97,23 @@ const AuthScreen = ({navigation}) => {
                 setIsError(true);
                 setMessage(jsonRes.message);
             } else {
-                /*const responseAuth =*/onLoggedIn(jsonRes.token).then(async (respAuth) => {
-                    console.log("responseAuth")
-                    console.log(respAuth)
+                    onLoggedIn(jsonRes.token).then(async (respAuth) => {
                     respAuth = await respAuth.json()
-                    console.log("responseAuth2")
+                    console.log("response after login api")
                     console.log(respAuth)
                     if (respAuth.checkAuth) {
-                        console.log("req1")
+                        console.log("check auth = true")
                         setIsError(false);
                         await storeId(String(jsonRes.id))
-                        console.log(jsonRes.id)
+                        console.log("user id" + jsonRes.id)
                         await storeAccessToken(jsonRes.token)
                         setMessage(respAuth.message);
-                        console.log(message)
+                        console.log("message from login api" + message)
                         if(isLogin){
                             navigation.navigate('MainScreen');
                         }
                     } else {
-                        console.log("any error")
+                        console.log("error while login")
                         setMessage(jsonRes.message);
                         setIsError(true);
                     }

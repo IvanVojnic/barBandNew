@@ -72,7 +72,7 @@ const Main = ({navigation}) => {
                 <TouchableOpacity style={stylesMain.buttonCloseModal} onPress={() => {setModalVisible(false)}}>
                     <Text style={stylesMain.buttonCloseModalText}>Close</Text>
                 </TouchableOpacity>
-                <GetFriends isModal={true}/>
+                {isNotifLoaded && <GetFriends isModal={true}/>}
             </View>
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>
