@@ -17,8 +17,10 @@ const Status = sequelize.define('statuses', {
 
 export const statusAmount = async () => {
     console.log("+++++++++++++++++++++++++")
-    console.log(await Status.count({}))
-    return  await Status.count({});
+    const [statuses, metadata] = await sequelize.query(
+        `SELECT * FROM statuses`
+    );
+    return statuses.length;
 }
 
 export default Status;

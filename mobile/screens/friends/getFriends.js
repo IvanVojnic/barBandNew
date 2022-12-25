@@ -15,19 +15,25 @@ const GetFriends = (isModal) => {
     const [isShowButton, setIsShowButton] = useState(false)
 
     useEffect(() => {
-        getFriends().then((response) => {
-            if (response === 1) {
-                setMessage("You don't have friends")
-            } else if (response === 0) {
-                setMessage("Error")
-            } else {
-                setFriends(response)
-            }
-            setIsLoaded(true)
-        }).catch(error => {
-            setError(error);
-        })
-
+        console.log("get friends 1")
+        const loadData = async () => {
+            console.log("get friends 2")
+            getFriends().then((response) => {
+                console.log("response get f")
+                console.log(response)
+                if (response === 1) {
+                    setMessage("You don't have friends")
+                } else if (response === 0) {
+                    setMessage("Error")
+                } else {
+                    setFriends(response)
+                }
+                setIsLoaded(true)
+            }).catch(error => {
+                setError(error);
+            })
+        }
+       loadData()
     }, [])
 
     useEffect(() => {
@@ -67,7 +73,7 @@ const GetFriends = (isModal) => {
                 <Text style={stylesModalWindowButton.buttonInviteText}>send invite</Text>
             </TouchableOpacity>
             }
-            {isLoaded ? message ? <span>message</span> :
+            {isLoaded ? message ? <View>message</View> :
                     <View>
                         {(isModal.isModal == true) ?
                             friends.map((item) => (
@@ -86,7 +92,7 @@ const GetFriends = (isModal) => {
                             ))
                         }
                     </View>
-                : <span>{error}</span>}
+                : <View>{error}</View>}
         </View>
     )
 }

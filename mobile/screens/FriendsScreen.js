@@ -10,22 +10,6 @@ const FriendsScreen = ({navigation}) => {
         navigation.navigate('MainScreen');
     }
 
-   /* const [data, setData] = useState(null)
-
-    const defaultValues = useMemo(() => ({
-        friends: data?.friends || {}
-    }))
-
-    const {
-        control,
-        reset,
-        setValue,
-        getValues
-    } = useForm({defaultValues, mode: 'onBlur'})
-
-    useEffect(() => {
-        reset(defaultValues)
-    }, [data])*/
 
     return (
         <View style={stylesFriend.Friend}>

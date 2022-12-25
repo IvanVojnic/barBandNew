@@ -1,5 +1,5 @@
 import PORT from '../../env.js'
-const urlAPI = `http://localhost:${PORT}`
+const urlAPI = `http://192.168.1.29:${PORT}`
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const getAccessToken = async () => {
@@ -15,7 +15,10 @@ export const getAccessToken = async () => {
 
 export const getId = async () => {
    try {
+      console.log("get id")
       const value = await AsyncStorage.getItem('userId');
+      console.log("value")
+      console.log(value)
       if(value !== null) {
          return value;
       }
@@ -98,7 +101,10 @@ export const acceptRequestFriends = async (id) => {
 }
 
 export const getNotifications = async () => {
+   console.log("get N1")
    const userId = await getId();
+   console.log("get N2")
+   console.log(userId)
    let response = await fetch(`${urlAPI}/getFriendsRequest`, {
       method: 'POST',
       headers: {
@@ -106,6 +112,8 @@ export const getNotifications = async () => {
       },
       body: JSON.stringify({id: userId})
    });
+   console.log("get N3")
+   console.log(response)
    if (response.ok) {
       return await response.json();
    } else {
@@ -116,7 +124,10 @@ export const getNotifications = async () => {
 }
 
 export const getFriends = async () => {
+   console.log("get f req 1")
    const userId = await getId();
+   console.log("get f req 1 user id")
+   console.log(userId)
    let response = await fetch(`${urlAPI}/getFriends`, {
       method: 'POST',
       headers: {
@@ -124,6 +135,8 @@ export const getFriends = async () => {
       },
       body: JSON.stringify({id: userId})
    });
+   console.log("get f response")
+   console.log(response)
    if (response.ok) {
       return await response.json();
    } else {
@@ -168,20 +181,33 @@ export const findFriends = async (emailUser) => {
 }
 
 export const onLoggedIn = async (token) => {
+   console.log("log0")
    let response = await fetch(`${urlAPI}/private`, {
-      method: 'GET',
+      method: 'POST',
       headers: {
          'Content-Type': 'application/json;charset=utf-8',
          'Authorization': `Bearer ${token}`,
       },
+      body: JSON.stringify({verify:"true"})
    })
-   if (response.ok) {
-      try {
-         const jsonRes = await response.json();
-         console.log(jsonRes);
-         return jsonRes.checkAuth;
-      } catch (err) {
-         console.log(err);
+   console.log("log1")
+   try {
+      console.log("log2")
+      if (response.ok) {
+         console.log("log3")
+         return response
+         /*const result = await response.json()
+         console.log("onLogged response");
+         console.log(result);
+         return result;*/
+      } else {
+         console.log("else");
+         return false;
       }
+   } catch (err) {
+      console.log("log4")
+      console.log("onLoggedErr");
+      console.log(err);
+      return false;
    }
 }

@@ -37,6 +37,7 @@ sequelize.sync({force:false}).then(()=>{
 }).catch(err=>console.log(err));
 
 async function addStatuses () {
+
     const amount = await statusAmount();
     if(amount < 3){
         console.log("________________________________________")
@@ -52,4 +53,4 @@ async function addStatuses () {
     }
 }
 addStatuses()
-app.listen(PORT);
+app.listen(PORT, "192.168.1.29");

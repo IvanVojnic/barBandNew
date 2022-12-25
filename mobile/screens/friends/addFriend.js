@@ -57,7 +57,7 @@ const AddFriend = () => {
                             </form>
                         </View>
                     }
-                </View> : <span>friend not found</span> : <div></div>}
+                </View> : <View>friend not found</View> : <View></View>}
             </View>
         )
 }

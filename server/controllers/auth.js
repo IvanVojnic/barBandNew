@@ -75,15 +75,23 @@ const isAuth = (req, res, next) => {
         return res.status(401).json({ message: 'not authenticated', checkAuth: false });
     };
     const token = authHeader.split(' ')[1];
+    console.log("token")
+    console.log(token)
     let decodedToken;
     try {
         decodedToken = jwt.verify(token, 'secret');
+        console.log("decode")
+        console.log(decodedToken)
     } catch (err) {
-        return res.status(500).json({ message: err.message || 'could not decode the token' });
+        console.log("err")
+        console.log(err.message)
+        return res.status(500).json({ message: 'could not decode the token' });
     };
     if (!decodedToken) {
+        console.log("no")
         res.status(401).json({ message: 'unauthorized' });
     } else {
+        console.log("yes")
         res.status(200).json({ message: 'here is your resource', checkAuth: true });
     };
 };

@@ -9,15 +9,18 @@ const Rooms = ({navigation}) => {
     const [statusAccepted, setStatusAccepted] = useState(false);
 
     useEffect(() => {
-        getRooms().then(async (response) => {
-            console.log(response)
-            await setRooms(response.rooms)
-            console.log(rooms)
-            console.log(typeof rooms)
-            setIsRoomsLoaded(true)
-        }).catch((e) => {
-            console.log(e)
-        })
+        const loadData = async () =>{
+            getRooms().then(async (response) => {
+                console.log(response)
+                await setRooms(response.rooms)
+                console.log(rooms)
+                console.log(typeof rooms)
+                setIsRoomsLoaded(true)
+            }).catch((e) => {
+                console.log(e)
+            })
+        }
+       loadData()
     }, [])
 
 

@@ -8,18 +8,25 @@ const Main = ({navigation}) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [isNotifLoaded, setIsNotifLoaded] = useState(false);
     const [notifCount, setNotifCount] = useState(0);
-    const [notifications, setNotifications] = useState(0);
+    const [notifications, setNotifications] = useState([]);
     const [opacity, setOpacity] = useState(0);
     const [visibility, setVisibility] = useState('hidden');
 
     useEffect(() => {
-        getNotifications().then((response) => {
-            setNotifCount(response.length)
-            setNotifications(response)
-            setIsNotifLoaded(true)
-        }).catch(error => {
-            console.log(error)
-        })
+        console.log("main 1")
+        const loadData = async () => {
+            console.log("main 2")
+            getNotifications().then((response) => {
+                console.log("response main")
+                console.log(response)
+                setNotifCount(response.length)
+                setNotifications(response)
+                setIsNotifLoaded(true)
+            }).catch(error => {
+                console.log(error)
+            })
+        }
+        loadData()
     }, [])
 
     const buttonFriendsHandler = () => {

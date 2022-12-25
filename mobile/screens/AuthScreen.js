@@ -5,11 +5,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import PORT from "../env.js";
 import {getId, getAccessToken} from "../core/api/API";
 
-const API_URL = Platform.OS === 'ios' ? `http://localhost:${PORT}` : `http://localhost:${PORT}`;
+const API_URL = Platform.OS === 'ios' ? `http://192.168.1.29:${PORT}` : `http://192.168.1.29:${PORT}`;
 
 const storeAccessToken = async (value) => {
     try {
-        await AsyncStorage.setItem('accessToken', value)
+        await AsyncStorage.setItem('accessToken', String(value))
     } catch (e) {
         console.log(e)
     }
@@ -20,6 +20,17 @@ const storeId = async (value) => {
         await AsyncStorage.setItem('userId', value)
     } catch (e) {
         console.log(e)
+    }
+}
+
+const removeItemValue = async (key) => {
+    try {
+        await AsyncStorage.removeItem(key);
+        return true;
+    }
+    catch(exception) {
+        console.log("except" + exception)
+        return false;
     }
 }
 
@@ -38,74 +49,98 @@ const AuthScreen = ({navigation}) => {
         setMessage('');
     };
 
-    useEffect(async () => {
-        const token = await getAccessToken();
-        onLoggedIn(token).then(async responseAuth => {
+    useEffect( () => {
+
+        const loadData = async (token) => {
+          //  const token = "o"//await getAccessToken();
+            console.log(token)
+            console.log("___1___")
+            let responseAuth = await onLoggedIn(token)//.then(async responseAuth => {
+            console.log(responseAuth)
+            console.log("___2___")
             if (responseAuth){
+                console.log("___3___")
                 setIsError(false);
-                setMessage(responseAuth.message);
+                setMessage("hi");
+                console.log("___4___")
                 if(isLogin){
+                    console.log("___5___")
                     navigation.navigate('MainScreen');
                 }
+
             } else {
-                setMessage(responseAuth.message);
+                console.log("error in token")
+                await removeItemValue('accessToken')
+                setMessage("not hi");
                 setIsError(true);
             }
-        })
+        }
+        const getToken = async () => {
+            const token = await getAccessToken();
+            console.log("Token up line")
+            console.log(token)
+            if (token != null && token != undefined && token != "") {
+                await loadData(token)
+            }
+        }
+        getToken()
     },[])
 
-    const onSubmitHandler = () => {
+    const onSubmitHandler = async () => {
         const payload = {
             email,
             name,
             password,
         };
-        fetch(`${API_URL}/${isLogin ? 'login' : 'signup'}`, {
+        const res = await fetch(`${API_URL}/${isLogin ? 'login' : 'signup'}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(payload),
         })
-        .then(async res => {
-            try {
-                const jsonRes = await res.json();
-                if (res.status !== 200) {
-                    setIsError(true);
-                    setMessage(jsonRes.message);
-                } else {
-                    await onLoggedIn(jsonRes.token).then(async responseAuth => {
-                        if (responseAuth){
-                            setIsError(false);
-                            await storeId(jsonRes.id)
-                            await storeAccessToken(jsonRes.token)
-                            setMessage(jsonRes.message);
-                            if(isLogin){
-                                navigation.navigate('MainScreen');
-                            }
-                        } else {
-                            setMessage(jsonRes.message);
-                            setIsError(true);
+        try {
+            console.log("login result")
+            const jsonRes = await res.json();
+            console.log(jsonRes)
+            if (res.status !== 200) {
+                setIsError(true);
+                setMessage(jsonRes.message);
+            } else {
+                /*const responseAuth =*/onLoggedIn(jsonRes.token).then(async (respAuth) => {
+                    console.log("responseAuth")
+                    console.log(respAuth)
+                    respAuth = await respAuth.json()
+                    console.log("responseAuth2")
+                    console.log(respAuth)
+                    if (respAuth.checkAuth) {
+                        console.log("req1")
+                        setIsError(false);
+                        await storeId(String(jsonRes.id))
+                        console.log(jsonRes.id)
+                        await storeAccessToken(jsonRes.token)
+                        setMessage(respAuth.message);
+                        console.log(message)
+                        if(isLogin){
+                            navigation.navigate('MainScreen');
                         }
-                    })
-                }
-            } catch (err) {
-                console.log(err);
-            };
-        })
-        .catch(err => {
+                    } else {
+                        console.log("any error")
+                        setMessage(jsonRes.message);
+                        setIsError(true);
+                    }
+                }).catch((er) => {
+                    console.log("er")
+                    console.log(er)
+                })
+            }
+        } catch (err) {
             console.log(err);
-        });
+        }
     };
-
-    const getMessage = () => {
-        const status = isError ? `Error: ` : `Success: `;
-        return status + message;
-    }
 
     return (
         <View>
-        <ImageBackground source={require('../public/images/gradient-back.jpeg')} style={styles.image}>
             <View style={styles.card}>
                 <Text style={styles.heading}>{isLogin ? 'Login' : 'Signup'}</Text>
                 <View style={styles.form}>
@@ -113,7 +148,7 @@ const AuthScreen = ({navigation}) => {
                         <TextInput style={styles.input} placeholder="Email" autoCapitalize="none" onChangeText={setEmail}></TextInput>
                         {!isLogin && <TextInput style={styles.input} placeholder="Name" onChangeText={setName}></TextInput>}
                         <TextInput secureTextEntry={true} style={styles.input} placeholder="Password" onChangeText={setPassword}></TextInput>
-                        <Text style={[styles.message, {color: isError ? 'red' : 'green'}]}>{message ? getMessage() : null}</Text>
+                        <Text style={[styles.message, {color: isError ? 'red' : 'green'}]}>{message}</Text>
                         <TouchableOpacity style={styles.button} onPress={onSubmitHandler}>
                             <Text style={styles.buttonText}>Done</Text>
                         </TouchableOpacity>
@@ -123,7 +158,6 @@ const AuthScreen = ({navigation}) => {
                     </View>
                 </View>
             </View>
-        </ImageBackground>
         </View>
     );
 };
