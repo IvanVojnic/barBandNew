@@ -53,4 +53,4 @@ async function addStatuses () {
     }
 }
 addStatuses()
-app.listen(PORT, "192.168.1.29");
+app.listen(PORT, "192.168.0.102");

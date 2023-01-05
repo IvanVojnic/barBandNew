@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import { ImageBackground, View, Text, StyleSheet, TouchableOpacity, TextInput, Platform, Image } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Platform } from 'react-native';
 import {onLoggedIn} from '../core/api/API'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import PORT from "../env.js";
-import {getId, getAccessToken} from "../core/api/API";
+import {getAccessToken} from "../core/api/API";
 
-const API_URL = Platform.OS === 'ios' ? `http://192.168.1.29:${PORT}` : `http://192.168.1.29:${PORT}`;
+const API_URL = Platform.OS === 'ios' ? `http://192.168.0.102:${PORT}` : `http://192.168.0.102:${PORT}`;
 
 const storeAccessToken = async (value) => {
     try {
@@ -51,7 +51,7 @@ const AuthScreen = ({navigation}) => {
 
     useEffect( () => {
         const loadData = async (token) => {
-            let responseAuth = await onLoggedIn(token)//.then(async responseAuth => {
+            let responseAuth = await onLoggedIn(token)
             console.log(responseAuth)
             if (responseAuth){
                 setIsError(false);

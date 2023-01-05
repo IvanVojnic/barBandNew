@@ -1,9 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+     import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import MainStack from './navigation';
-//import {AuthScreen} from './screens';
+//import registerNNPushToken from "native-notify";
+global.__reanimatedWorkletInit = () => {};
 export default function App() {
+  //registerNNPushToken(5590, 'uXdMYod5Am9EVK7Vc7hoGl')
   return (
       <MainStack/>
   );

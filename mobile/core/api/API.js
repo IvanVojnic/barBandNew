@@ -1,5 +1,5 @@
 import PORT from '../../env.js'
-const urlAPI = `http://192.168.1.29:${PORT}`
+const urlAPI = `http://192.168.0.102:${PORT}`
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const getAccessToken = async () => {
@@ -105,22 +105,35 @@ export const getNotifications = async () => {
    const userId = await getId();
    console.log("get N2")
    console.log(userId)
-   let response = await fetch(`${urlAPI}/getFriendsRequest`, {
-      method: 'POST',
-      headers: {
-         'Content-Type': 'application/json;charset=utf-8',
-      },
-      body: JSON.stringify({id: userId})
-   });
-   console.log("get N3")
-   console.log(response)
-   if (response.ok) {
-      return await response.json();
-   } else {
-      console.log(response);
-      return 0;
-   }
-   return 0;
+   //try {
+      let response = await fetch(`${urlAPI}/getFriendsRequest`, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json;charset=utf-8',
+         },
+         body: JSON.stringify({id: userId})
+      })/*.catch((e) => {
+         console.log("getNotif error" + e)
+      })*/
+      console.log("get N3")
+      try{
+         console.log("get N4")
+         console.log(response)
+         if (response.ok) {
+            return await response.json();
+         } else {
+            console.log(response);
+            return 0;
+         }
+      } catch (error) {
+         console.log("get notif response error")
+         console.log(error)
+      }
+   /*} catch (mainError) {
+      console.log("mainError")
+      console.log(mainError)
+   }*/
+
 }
 
 export const getFriends = async () => {
@@ -204,10 +217,11 @@ export const onLoggedIn = async (token) => {
          console.log(result);
          return result;*/
       } else {
-         console.log("onLoggedIn response NOT ok, look at status")
+         console.log("else");
          return false;
       }
    } catch (err) {
+      console.log("log4")
       console.log("onLoggedErr");
       console.log(err);
       return false;

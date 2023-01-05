@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import {StyleSheet, View, Text, Button, TouchableOpacity} from "react-native";
+import {StyleSheet, View, Text, TouchableOpacity} from "react-native";
 import {getNotifications} from "../core/api/API";
 import GetFriends from "./friends/getFriends";
 
@@ -72,7 +72,7 @@ const Main = ({navigation}) => {
                 <TouchableOpacity style={stylesMain.buttonCloseModal} onPress={() => {setModalVisible(false)}}>
                     <Text style={stylesMain.buttonCloseModalText}>Close</Text>
                 </TouchableOpacity>
-                {isNotifLoaded && <GetFriends isModal={true}/>}
+                {/*isNotifLoaded && <GetFriends isModal={true}/>*/}
             </View>
             <View style={stylesMain.butFriendsWrapper}>
                 <TouchableOpacity style={stylesMain.buttonFriends} onPress={buttonNotifications}>

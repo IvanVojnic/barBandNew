@@ -14,6 +14,7 @@ export const acceptFriendsRequest = async (req, res, next) => {
     }
 }
 
+
 export const sendFriends = async (req, res, next) => {
     const [resultsReceiver, metadata] = await sequelize.query(
         `select USERS.id, USERS.name, USERS.email
@@ -32,6 +33,7 @@ export const sendFriends = async (req, res, next) => {
 }
 
 export const sendFriendsRequest = async (req, res, next) => {
+    console.log("get notif")
     const [resultsReceiver, metadata] = await sequelize.query(
         `select USERS.id, USERS.name, USERS.email
              from USERS
@@ -45,6 +47,8 @@ export const sendFriendsRequest = async (req, res, next) => {
     for(let i = 0; i < resultsSender.length; i++){
         resultsReceiver.push(resultsSender[i])
     }
+    console.log("result notif")
+    console.log(resultsReceiver)
     return res.status(200).json(resultsReceiver);
 }
 
