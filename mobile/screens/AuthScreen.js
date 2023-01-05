@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import PORT from "../env.js";
 import {getAccessToken} from "../core/api/API";
 
-const API_URL = Platform.OS === 'ios' ? `http://192.168.0.102:${PORT}` : `http://192.168.0.102:${PORT}`;
+const API_URL = Platform.OS === 'ios' ? `http://localhost:${PORT}` : `http://localhost:${PORT}`;
 
 const storeAccessToken = async (value) => {
     try {

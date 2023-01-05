@@ -1,5 +1,5 @@
 import PORT from '../../env.js'
-const urlAPI = `http://192.168.0.102:${PORT}`
+const urlAPI = `http://localhost:${PORT}`
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const getAccessToken = async () => {
