@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6fb38e56-181b-496e-beb1-55709c0e4ec8" name="Changes" comment="feat: on rooms  request user rooms showed in console">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/1f73dce5-44ca-4034-ad3a-5679fdf61c54/entities/entities.dat_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/core/api/API.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/core/api/API.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/screens/AuthScreen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mobile/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mobile/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/mobile/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +213,7 @@
       <workItem from="1672701997106" duration="3131000" />
       <workItem from="1672783489259" duration="3372000" />
       <workItem from="1672908094812" duration="7962000" />
+      <workItem from="1672958068823" duration="1006000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1662735928676</created>

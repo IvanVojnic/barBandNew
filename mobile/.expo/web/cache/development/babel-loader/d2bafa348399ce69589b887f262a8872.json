@@ -1,0 +1,1 @@
+{"ast":null,"code":"var PORT = 5000;\nexport default PORT;","map":{"version":3,"names":["PORT"],"sources":["D:/проекты летом 2022/work2/barband/mobile/env.js"],"sourcesContent":["const PORT = 5000;\r\nexport default PORT\r\n"],"mappings":"AAAA,IAAMA,IAAI,GAAG,IAAb;AACA,eAAeA,IAAf"},"metadata":{},"sourceType":"module"}
