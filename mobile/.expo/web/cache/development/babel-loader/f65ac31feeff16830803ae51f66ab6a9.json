@@ -1,0 +1,1 @@
+{"ast":null,"code":"var PORT = 5000;\nexport default PORT;","map":{"version":3,"names":["PORT"],"sources":["C:/Users/MyPC/WebstormProjects/barBandNew/mobile/env.js"],"sourcesContent":["const PORT = 5000;\r\nexport default PORT;\r\n"],"mappings":"AAAA,IAAMA,IAAI,GAAG,IAAI;AACjB,eAAeA,IAAI"},"metadata":{},"sourceType":"module"}

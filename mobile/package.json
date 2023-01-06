@@ -42,6 +42,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "react-native-paper": "^4.12.4"
   }
 }
