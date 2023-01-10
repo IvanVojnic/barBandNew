@@ -202,6 +202,14 @@ html, body.myBody {
     height: 85%;
 }
 
+/********form*******/
+
+.formSection {
+    padding: 3em 0 0 0;
+    position: relative;
+    height: inherit;
+}
+
 /********vLine*******/
 
 .verticalLine1 {
